@@ -20,7 +20,9 @@ tags:
 
 如：`zhangsan.github.io`
 
-### 设置该仓为GitHub Page仓，步骤如下：
+### 设置该仓为GitHub Page仓
+
+步骤如下：
 
 - 在软件仓的主页面点击`Setting`
 
@@ -30,38 +32,56 @@ tags:
 
 ### 在浏览器中输入`https://zhangsan.github.io`便可以访问网页了。
 
-但是这样建好的网站并不美观，下面我们使用Hexo提供的框架对网页仓进行优化
+但是这样建好的网站并不美观，下面我们将会使用Hexo提供的框架对网页仓进行优化
 
-## 使用Hexo框架，Next主题对网站进行优化
+## 优化GitHub Pages并对仓库进行管理
 
-- [hexo](https://hexo.io/zh-cn/)
+参考：[知乎](https://www.zhihu.com/question/21193762/answer/79109280)，[hexo](https://hexo.io/zh-cn/docs/themes.html)
 
-- [next](https://theme-next.iissnan.com/getting-started.html)
+### 搭建的流程
 
-### 安装`node.js`和`Git`
+1. `zhangsan.github.io`仓创建两个分支：`master`与`hexo`
 
-### Hexo搭建
+2. 设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）
 
-- 打开命令行，在node中安装Hexo
+3. 克隆仓库到本地，并且切换到hexo分支
 
-```
-npm install -g hexo-cli
-```
+4. 参考[hexo](https://hexo.io/zh-cn/docs/)安装`node`和`git`，在hexo分支上执部署hexo
 
-- 在任意目录新建文件夹`Blogs`，并对该目录进行初始化
+5. 修改_config.yml中的deploy参数，即将网页文件上传到`master`上
 
 ```
-hexo init
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: 'git'
+  repo: https://github.com/zhangsan/zhangsan.github.io.git
+  branch: master
 ```
 
-- 测试
+7. 依次执行`git add .`，`git commit -m "..."`，`git push origin hexo`提交网站相关的文件
 
-```
-hexo g // 打包文件
-hexo s // 启动服务器
-```
+8. 执行`hexo g`，`hexo d`生成网站并部署到GitHub上
 
-### 更换next主题
+### 关于日常的改动流程
+
+在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。
+
+1. 依次执行`git add .`，`git commit -m "..."`，`git push origin hexo`将改动推送到GitHub（分支应为hexo）
+
+2. 执行`hexo g`，`hexo d`发布网站到master分支上
+
+### 本地资料丢失后的流程
+
+当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：
+
+1. 使用`git clone git@github.com:zhangsan/zhangsan.github.io.git`拷贝仓库，并切换到`hexo`分支
+
+2. 在本地克隆下来的文件夹根目录下，依次执行下列指令：`npm install hexo`，`npm install`，`npm install hexo-deployer-git`，（记得，不需要hexo init这条指令）。
+
+## next主题设置
+
+参考：[next](https://theme-next.iissnan.com/getting-started.html)
 
 - 在`Blogs`目录下，输入命令：
 
@@ -77,35 +97,6 @@ git clone https://github.com/theme-next/hexo-theme-next.git themes/next
 
 - 主题文件夹根目录下的`themes/next/_config.yml`文件叫作主题配置文件
 
-## 将本地Hexo部署到GitHub Pages
-
-### 修改站点配置文件 `_config.yml`
-
-```
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: 'git'
-  repo: https://github.com/zhangsan/zhangsan.github.io.git
-  branch: master
-```
-
-### 部署
-
-- 在项目根目录下安装Git部署插件
-
-```
-npm install hexo-deployer-git --save
-```
-
-- 部署到GitHub Pages
-
-```
-hexo g 
-hexo d
-```
-
-## 其他
 
 ### 给next主题添加[标签]等页面
 
