@@ -77,7 +77,7 @@ git clone https://github.com/theme-next/hexo-theme-next.git themes/next
 
 ## 将本地Hexo部署到GitHub Pages
 
-### 修改站点配置文件 _config.yml
+### 修改站点配置文件 `_config.yml`
 
 ```
 # Deployment
@@ -101,4 +101,46 @@ npm install hexo-deployer-git --save
 ```
 hexo g 
 hexo d
+```
+
+## 其他
+
+### 给next主题添加[标签]等页面
+
+新建页面：
+
+```
+$ cd your-hexo-site
+$ hexo new page tags
+
+```
+
+设置页面类型：
+
+```
+title: 标签
+date: 2014-12-22 12:39:04
+type: "tags"
+---
+```
+
+修改菜单：
+
+```
+menu:
+  home: /
+  archives: /archives
+  tags: /tags
+```
+
+**特别注意：***
+
+`Menu`如果使用了图标，一定要按照下面的格式设置，小心空格
+
+```
+menu:
+  home: /|| home
+  #about: /about/|| user
+  tags: /tags/|| tags
+  categories: /categories/|| th
 ```
