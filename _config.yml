@@ -101,3 +101,11 @@ deploy:
   type: 'git'
   repo: https://github.com/hkeeplearning/hkeeplearning.github.io.git
   branch: master
+
+
+# Search service
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
