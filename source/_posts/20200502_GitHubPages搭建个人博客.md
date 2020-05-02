@@ -6,7 +6,9 @@ categories:
 tags: 
   - GitHub
 ---
-博客搭建的过程虽然简单，但是过程很繁琐，这里记录一下简单GitHub Pages博客搭建的过程。
+使用GitHub搭建个人博客的过程虽然简单，但是期间还是踩过了一些坑，这里简单的记录一下配置的过程，以方便查找。
+
+<!-- more -->
 
 ## GitHub Pages初始化
 
