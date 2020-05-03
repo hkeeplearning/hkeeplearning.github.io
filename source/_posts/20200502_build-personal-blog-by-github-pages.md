@@ -1,10 +1,11 @@
 ---
 title: GitHub Pages搭建个人博客
-date: 2020-05-02 12:55:16
 categories:
   - 网站搭建
-tags: 
+tags:
   - GitHub
+abbrlink: 9414
+date: 2020-05-02 12:55:16
 ---
 使用GitHub搭建个人博客的过程虽然简单，但是期间还是踩过了一些坑，这里简单的记录一下配置的过程，以方便查找。
 
