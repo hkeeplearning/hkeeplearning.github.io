@@ -342,7 +342,7 @@ font:
 
 # MathJax Support
 mathjax:
-  enable: false
+  enable: true
   per_page: false
   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
 
@@ -463,6 +463,7 @@ needmoreshare2:
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
 #google_site_verification:
+google-site-verification: PnEQlGNn8R8YyCUnlYE9W57ncy-Wqh2o3K4Zdm2dIc4
 
 # Google Analytics
 google_analytics: UA-81646744-1
