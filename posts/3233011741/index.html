@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="GitHub," />
+  <meta name="keywords" content="PyTorch,深度学习基础," />
 
 
 
@@ -79,16 +79,17 @@
 
 
 
-<meta name="description" content="使用GitHub搭建个人博客的过程虽然简单，但是期间还是踩过了一些坑，这里简单的记录一下配置的过程，以方便查找。">
+<meta name="description" content="深度学习所用到的数学知识并没有特别高深，其中最重要的是损失函数，梯度下降和激活函数。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GitHub Pages搭建个人博客">
-<meta property="og:url" content="http://hkeeplearning.github.io/posts/9414/index.html">
+<meta property="og:title" content="深度学习基础">
+<meta property="og:url" content="http://hkeeplearning.github.io/posts/3233011741/index.html">
 <meta property="og:site_name" content="hyy&#39;s blog">
-<meta property="og:description" content="使用GitHub搭建个人博客的过程虽然简单，但是期间还是踩过了一些坑，这里简单的记录一下配置的过程，以方便查找。">
-<meta property="article:published_time" content="2020-05-02T04:55:16.000Z">
-<meta property="article:modified_time" content="2020-05-03T02:07:51.303Z">
+<meta property="og:description" content="深度学习所用到的数学知识并没有特别高深，其中最重要的是损失函数，梯度下降和激活函数。">
+<meta property="article:published_time" content="2020-05-05T15:11:48.000Z">
+<meta property="article:modified_time" content="2020-05-05T16:19:02.779Z">
 <meta property="article:author" content="hyy">
-<meta property="article:tag" content="GitHub">
+<meta property="article:tag" content="PyTorch">
+<meta property="article:tag" content="深度学习基础">
 <meta name="twitter:card" content="summary">
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://hkeeplearning.github.io/posts/9414/"/>
+  <link rel="canonical" href="http://hkeeplearning.github.io/posts/3233011741/"/>
 
 
 
 
 
-  <title>GitHub Pages搭建个人博客 | hyy's blog</title>
+  <title>深度学习基础 | hyy's blog</title>
   
 
 
@@ -295,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hkeeplearning.github.io/posts/9414/">
+    <link itemprop="mainEntityOfPage" href="http://hkeeplearning.github.io/posts/3233011741/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="hyy">
@@ -312,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">GitHub Pages搭建个人博客</h1>
+          <h1 class="post-title" itemprop="name headline">深度学习基础</h1>
         
 
         <div class="post-meta">
@@ -324,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-02T12:55:16+08:00">
-                2020-05-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-05T23:11:48+08:00">
+                2020-05-05
               </time>
             
 
@@ -347,8 +348,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index">
-                    <span itemprop="name">网站搭建</span>
+                  <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">深度学习</span>
                   </a>
                 </span>
 
@@ -365,8 +366,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/9414/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/9414/" itemprop="commentCount"></span>
+                <a href="/posts/3233011741/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/3233011741/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -374,7 +375,7 @@
 
           
           
-             <span id="/posts/9414/" class="leancloud_visitors" data-flag-title="GitHub Pages搭建个人博客">
+             <span id="/posts/3233011741/" class="leancloud_visitors" data-flag-title="深度学习基础">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -405,84 +406,26 @@
       
 
       
-        <p>使用GitHub搭建个人博客的过程虽然简单，但是期间还是踩过了一些坑，这里简单的记录一下配置的过程，以方便查找。</p>
+        <p>深度学习所用到的数学知识并没有特别高深，其中最重要的是损失函数，梯度下降和激活函数。</p>
 <a id="more"></a>
 
-<h2 id="GitHub-Pages初始化"><a href="#GitHub-Pages初始化" class="headerlink" title="GitHub Pages初始化"></a>GitHub Pages初始化</h2><h3 id="创建个人的GitHub账号"><a href="#创建个人的GitHub账号" class="headerlink" title="创建个人的GitHub账号"></a>创建个人的GitHub账号</h3><p>如用户名：<code>zhangsan</code></p>
-<h3 id="在GitHub账号里新建一个和账号用户名同名的管理仓"><a href="#在GitHub账号里新建一个和账号用户名同名的管理仓" class="headerlink" title="在GitHub账号里新建一个和账号用户名同名的管理仓"></a>在GitHub账号里新建一个和账号用户名同名的管理仓</h3><p>如：<code>zhangsan.github.io</code></p>
-<h3 id="设置该仓为GitHub-Page仓"><a href="#设置该仓为GitHub-Page仓" class="headerlink" title="设置该仓为GitHub Page仓"></a>设置该仓为GitHub Page仓</h3><p>步骤如下：</p>
+<h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><p>损失函数使用来估量模型和预测值和真实值之间的不一样程度，它是一个非负的实数。损失函数的值越小，表示模型越好。</p>
+<h3 id="均方差损失函数"><a href="#均方差损失函数" class="headerlink" title="均方差损失函数"></a>均方差损失函数</h3><p>$$<br>MSE =<br>$$</p>
+<h3 id="绝对误差"><a href="#绝对误差" class="headerlink" title="绝对误差"></a>绝对误差</h3><p>$$<br>MAE=<br>$$</p>
+<h3 id="交叉熵损失函数"><a href="#交叉熵损失函数" class="headerlink" title="交叉熵损失函数"></a>交叉熵损失函数</h3><p>概率估计上定义，</p>
+<h2 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h2><h3 id="SGD"><a href="#SGD" class="headerlink" title="SGD"></a>SGD</h3><h3 id="RMSProp"><a href="#RMSProp" class="headerlink" title="RMSProp"></a>RMSProp</h3><h3 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h3><h2 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h2><p>在神经网络的计算过程中，每层都相当于一个矩阵相乘，所以无论多少层的神经网络都是输入的线性组合。所以需要激活函数来引入非线性的因素，使得神经网络可以逼近任何非线性函数，增加模型的泛化特性。</p>
+<h3 id="sigmoid"><a href="#sigmoid" class="headerlink" title="sigmoid"></a>sigmoid</h3><p>$$<br>s(x) = \frac{1}{1 + {e}^{-x}}<br>$$</p>
+<p>导数为：<br>$$<br>\frac {\partial s(x)}{\partial x} = s(x)(1-s(x))<br>$$</p>
 <ul>
-<li><p>在软件仓的主页面点击<code>Setting</code></p>
-</li>
-<li><p>找到<code>GitHub Pages</code>，点击<code>Choose a theme</code></p>
-</li>
-<li><p>然后随便选择一个主题，并对更改进行<code>commit</code></p>
-</li>
+<li>sigmoid需要进行指数运算，因此计算速度比较慢</li>
+<li><em>函数的输出不是以0为中心，这样会使权重更新效率降低（Why？）</em>，<a href="https://liam.page/2018/04/17/zero-centered-active-function/" target="_blank" rel="noopener">参考</a></li>
 </ul>
-<h3 id="在浏览器中输入https-zhangsan-github-io便可以访问网页了。"><a href="#在浏览器中输入https-zhangsan-github-io便可以访问网页了。" class="headerlink" title="在浏览器中输入https://zhangsan.github.io便可以访问网页了。"></a>在浏览器中输入<code>https://zhangsan.github.io</code>便可以访问网页了。</h3><p>但是这样建好的网站并不美观，下面我们将会使用Hexo提供的框架对网页仓进行优化</p>
-<h2 id="优化GitHub-Pages并对仓库进行管理"><a href="#优化GitHub-Pages并对仓库进行管理" class="headerlink" title="优化GitHub Pages并对仓库进行管理"></a>优化GitHub Pages并对仓库进行管理</h2><p>参考：<a href="https://www.zhihu.com/question/21193762/answer/79109280" target="_blank" rel="noopener">知乎</a>，<a href="https://hexo.io/zh-cn/docs/themes.html" target="_blank" rel="noopener">hexo</a></p>
-<h3 id="搭建的流程"><a href="#搭建的流程" class="headerlink" title="搭建的流程"></a>搭建的流程</h3><ol>
-<li><p><code>zhangsan.github.io</code>仓创建两个分支：<code>master</code>与<code>hexo</code></p>
-</li>
-<li><p>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）</p>
-</li>
-<li><p>克隆仓库到本地，并且切换到hexo分支</p>
-</li>
-<li><p>参考<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">hexo</a>安装<code>node</code>和<code>git</code>，在hexo分支上执部署hexo</p>
-</li>
-<li><p>修改_config.yml中的deploy参数，即将网页文件上传到<code>master</code>上</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: &#39;git&#39;</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;zhangsan&#x2F;zhangsan.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<ol start="7">
-<li><p>依次执行<code>git add .</code>，<code>git commit -m &quot;...&quot;</code>，<code>git push origin hexo</code>提交网站相关的文件</p>
-</li>
-<li><p>执行<code>hexo g</code>，<code>hexo d</code>生成网站并部署到GitHub上</p>
-</li>
-</ol>
-<h3 id="关于日常的改动流程"><a href="#关于日常的改动流程" class="headerlink" title="关于日常的改动流程"></a>关于日常的改动流程</h3><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p>
-<ol>
-<li><p>依次执行<code>git add .</code>，<code>git commit -m &quot;...&quot;</code>，<code>git push origin hexo</code>将改动推送到GitHub（分支应为hexo）</p>
-</li>
-<li><p>执行<code>hexo g</code>，<code>hexo d</code>发布网站到master分支上</p>
-</li>
-</ol>
-<h3 id="本地资料丢失后的流程"><a href="#本地资料丢失后的流程" class="headerlink" title="本地资料丢失后的流程"></a>本地资料丢失后的流程</h3><p>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
-<ol>
-<li><p>使用<code>git clone git@github.com:zhangsan/zhangsan.github.io.git</code>拷贝仓库，并切换到<code>hexo</code>分支</p>
-</li>
-<li><p>在本地克隆下来的文件夹根目录下，依次执行下列指令：<code>npm install hexo</code>，<code>npm install</code>，<code>npm install hexo-deployer-git</code>，（记得，不需要hexo init这条指令）。</p>
-</li>
-</ol>
-<h2 id="next主题设置"><a href="#next主题设置" class="headerlink" title="next主题设置"></a>next主题设置</h2><p>参考：<a href="https://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">next</a></p>
-<ul>
-<li>在<code>Blogs</code>目录下，输入命令：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next.git themes&#x2F;next</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>打开根目录下的<code>_config.yml</code>文件，将theme字段改为next即可</li>
-</ul>
-<p><strong>注意：</strong></p>
-<ul>
-<li><p>项目根目录下的<code>_config.yml</code>文件叫作站点配置文件</p>
-</li>
-<li><p>主题文件夹根目录下的<code>themes/next/_config.yml</code>文件叫作主题配置文件</p>
-</li>
-</ul>
-<h3 id="给next主题添加-标签-等页面"><a href="#给next主题添加-标签-等页面" class="headerlink" title="给next主题添加[标签]等页面"></a>给next主题添加[标签]等页面</h3><p>新建页面：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd your-hexo-site</span><br><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
-
-<p>设置页面类型：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: 标签</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>修改菜单：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F;</span><br><span class="line">  archives: &#x2F;archives</span><br><span class="line">  tags: &#x2F;tags</span><br></pre></td></tr></table></figure>
-
-<p><strong>特别注意：*</strong></p>
-<p><code>Menu</code>如果使用了图标，一定要按照下面的格式设置，小心空格</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F;|| home</span><br><span class="line">  #about: &#x2F;about&#x2F;|| user</span><br><span class="line">  tags: &#x2F;tags&#x2F;|| tags</span><br><span class="line">  categories: &#x2F;categories&#x2F;|| th</span><br></pre></td></tr></table></figure>
+<p>更新效率即指函数的收敛速度，迭代次数越多，说明模型的收敛速度越慢；反之，迭代次数少，则表明收敛速度快。</p>
+<p>深度学习的一般方法即方向传播，即链式法则。<br>$$<br>w \leftarrow w - \eta \frac {\partial L}{\partial w}<br>$$<br>对某一个神经元，其输入输出关系是<br>$$<br>f(\vec x;\vec w, b) = f(\sum w_i x_i + b)<br>$$<br>因此，对某一个参数$w_i$来说<br>$$<br>\frac {\partial L}{\partial w_i} = \frac {\partial L}{\partial f} \frac {\partial f}{\partial z} \frac {\partial z}{\partial w_i} = x_i \frac {\partial L}{\partial f} \frac {\partial f}{\partial z}<br>$$<br>因此，对于某一个参数，其更新过程为<br>$$<br>w_i \leftarrow w_i - \eta \frac {\partial L}{\partial w_i} = w_i - \eta x_i \frac {\partial L}{\partial f} \frac {\partial f}{\partial z}<br>$$</p>
+<p>参数$w_i$的实际更新方向由$\frac {\partial L}{\partial f} \frac {\partial f}{\partial z}$决定。另外，从上式也可以看出对于任意一个$w_i$，$\frac {\partial L}{\partial f} \frac {\partial f}{\partial z}$都是常数，所以各个$w_i$更新方向的差异，完全由输入值$x_i$决定。</p>
+<p><strong>以零为中心的影响：</strong></p>
+<p>以二维输入为例<br>$$<br>f(\vec x;\vec w, b) = f(w_0 x_0 + w_1 x_1 + b)<br>$$<br>现在假设参数$w_0$，$w_1$的最优解是$w_0^<em>$，$w_1^</em>$，且满足条件<br>$$<br>w_0 \lt w_0^<em>, w_1 \ge w_1^</em><br>$$<br>这说明，$w_0$希望增大，而$w_1$需要适当减小。因此要求$x_0$和$x_1$的符号相反，但是在sigmoid函数中，输出值始终未正。这也就是说，如果上一级神经元采用sigmoid函数作为激活函数，那么我们总无法做到$x_0$和$x_1$符号相反。</p>
+<h3 id="tanh"><a href="#tanh" class="headerlink" title="tanh"></a>tanh</h3><h3 id="relu"><a href="#relu" class="headerlink" title="relu"></a>relu</h3><h3 id="leaky-relu"><a href="#leaky-relu" class="headerlink" title="leaky relu"></a>leaky relu</h3>
       
     </div>
     
@@ -499,7 +442,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+            <a href="/tags/PyTorch/" rel="tag"># PyTorch</a>
+          
+            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" rel="tag"># 深度学习基础</a>
           
         </div>
       
@@ -512,15 +457,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/posts/21798/" rel="next" title="C++实现多维数组">
+                <i class="fa fa-chevron-left"></i> C++实现多维数组
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/21798/" rel="prev" title="C++实现多维数组">
-                C++实现多维数组 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -671,7 +616,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub-Pages初始化"><span class="nav-number">1.</span> <span class="nav-text">GitHub Pages初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建个人的GitHub账号"><span class="nav-number">1.1.</span> <span class="nav-text">创建个人的GitHub账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在GitHub账号里新建一个和账号用户名同名的管理仓"><span class="nav-number">1.2.</span> <span class="nav-text">在GitHub账号里新建一个和账号用户名同名的管理仓</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置该仓为GitHub-Page仓"><span class="nav-number">1.3.</span> <span class="nav-text">设置该仓为GitHub Page仓</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在浏览器中输入https-zhangsan-github-io便可以访问网页了。"><span class="nav-number">1.4.</span> <span class="nav-text">在浏览器中输入https:&#x2F;&#x2F;zhangsan.github.io便可以访问网页了。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化GitHub-Pages并对仓库进行管理"><span class="nav-number">2.</span> <span class="nav-text">优化GitHub Pages并对仓库进行管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建的流程"><span class="nav-number">2.1.</span> <span class="nav-text">搭建的流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于日常的改动流程"><span class="nav-number">2.2.</span> <span class="nav-text">关于日常的改动流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地资料丢失后的流程"><span class="nav-number">2.3.</span> <span class="nav-text">本地资料丢失后的流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next主题设置"><span class="nav-number">3.</span> <span class="nav-text">next主题设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#给next主题添加-标签-等页面"><span class="nav-number">3.1.</span> <span class="nav-text">给next主题添加[标签]等页面</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#损失函数"><span class="nav-number">1.</span> <span class="nav-text">损失函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#均方差损失函数"><span class="nav-number">1.1.</span> <span class="nav-text">均方差损失函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绝对误差"><span class="nav-number">1.2.</span> <span class="nav-text">绝对误差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交叉熵损失函数"><span class="nav-number">1.3.</span> <span class="nav-text">交叉熵损失函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降"><span class="nav-number">2.</span> <span class="nav-text">梯度下降</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SGD"><span class="nav-number">2.1.</span> <span class="nav-text">SGD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RMSProp"><span class="nav-number">2.2.</span> <span class="nav-text">RMSProp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adam"><span class="nav-number">2.3.</span> <span class="nav-text">Adam</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#激活函数"><span class="nav-number">3.</span> <span class="nav-text">激活函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sigmoid"><span class="nav-number">3.1.</span> <span class="nav-text">sigmoid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tanh"><span class="nav-number">3.2.</span> <span class="nav-text">tanh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#relu"><span class="nav-number">3.3.</span> <span class="nav-text">relu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#leaky-relu"><span class="nav-number">3.4.</span> <span class="nav-text">leaky relu</span></a></li></ol></li></ol></div>
             
 
           </div>
