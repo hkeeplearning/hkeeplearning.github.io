@@ -15,7 +15,7 @@ date: 2020-05-06 01:04:32
 
 Typora设置图片上传的步骤分为以下5步
 
-![Typora图片上传设置步骤](./assert/20200506/1588698840.jpg)
+![Typora图片上传设置步骤](/assert/20200506/1588698840.jpg)
 
 [token创建](https://github.com/settings/tokens)
 
