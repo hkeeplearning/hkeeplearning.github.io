@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C++编码总结</title>
+    <url>/posts/3707651035/</url>
+    <content><![CDATA[<p>总结日常开发中的一些小知识。</p>
+<a id="more"></a>
+
+<h2 id="restrict用法"><a href="#restrict用法" class="headerlink" title="restrict用法"></a><code>restrict</code>用法</h2><p>只能用于修饰指针，表示同一块内存不能被别的指针引用。有利于编译器进行优化。</p>
+<p>示例：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">foo</span><span class="params">(<span class="keyword">int</span> *a, <span class="keyword">int</span> *b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    *a = <span class="number">5</span>;</span><br><span class="line">    *b = <span class="number">6</span>;</span><br><span class="line">    <span class="keyword">return</span> *a + *b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">rfoo</span><span class="params">(<span class="keyword">int</span> * __restrict a, <span class="keyword">int</span> * __restrict b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    *a = <span class="number">5</span>;</span><br><span class="line">    *b = <span class="number">6</span>;</span><br><span class="line">    <span class="keyword">return</span> *a + *b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>编译出的汇编代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">foo:</span><br><span class="line">	.seh_endprologue</span><br><span class="line">	movl	$5, (%rcx)</span><br><span class="line">	movl	$6, (%rdx)</span><br><span class="line">	movl	(%rcx), %eax</span><br><span class="line">	addl	$6, %eax</span><br><span class="line">	ret</span><br><span class="line">	.seh_endproc</span><br><span class="line">	.p2align 4,,15</span><br><span class="line">	.globl	rfoo</span><br><span class="line">	.def	rfoo;	.scl	2;	.type	32;	.endef</span><br><span class="line">	.seh_proc	rfoo</span><br><span class="line">rfoo:</span><br><span class="line">	.seh_endprologue</span><br><span class="line">	movl	$11, %eax</span><br><span class="line">	movl	$5, (%rcx)</span><br><span class="line">	movl	$6, (%rdx)</span><br><span class="line">	ret</span><br></pre></td></tr></table></figure>
+
+<h2 id="const用法"><a href="#const用法" class="headerlink" title="const用法"></a><code>const</code>用法</h2><p>如果确定一个变量是只读的，在作用域内不会改变它的值，就将其声明为<code>const</code>。注意<code>const</code>是只读的意思，而不能狭隘的认为是常量。</p>
+<h2 id="extern-quot-C-quot-用法"><a href="#extern-quot-C-quot-用法" class="headerlink" title="extern &quot;C&quot;用法"></a><code>extern &quot;C&quot;</code>用法</h2><ol>
+<li><p>不要在<code>extern &quot;C&quot;</code>的作用范围内中使用<code>namespace</code></p>
+</li>
+<li><p>不要在<code>extern &quot;C&quot;</code>范围内声明的函数签名中使用C++的特性</p>
+</li>
+</ol>
+<p>不规范的写法：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span> &#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> Img &#123;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Function1</span><span class="params">(<span class="keyword">float</span> f1, <span class="keyword">float</span> &amp;f2)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Function2</span><span class="params">(<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">float</span>&gt; &amp;v, <span class="keyword">float</span> *f2)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Function3</span><span class="params">(<span class="keyword">int</span> lhs)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Function3</span><span class="params">(<span class="keyword">float</span> lhs)</span></span>;</span><br><span class="line">    </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">MyStruct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">float</span> *f;</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Function4</span><span class="params">(MyStruct * myStr)</span></span>;</span><br><span class="line">    </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCls</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    MyCls();</span><br><span class="line">    ~MyCls();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="宏定义"><a href="#宏定义" class="headerlink" title="宏定义"></a>宏定义</h2><p>尽管我们常说要禁用宏定义，但是它还是有一些优点的。比如常用的：</p>
+<ol>
+<li>使用宏定义进行一些调试代码的条件编译</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> _USER_DEBUG</span></span><br><span class="line"><span class="function"><span class="built_in">std</span>::ofstream <span class="title">ofs</span><span class="params">(<span class="string">"out.raw"</span>, <span class="built_in">std</span>::ios::binary)</span></span>;</span><br><span class="line"><span class="keyword">if</span> (ofs.is_open())</span><br><span class="line">&#123;</span><br><span class="line">    ofs.<span class="built_in">write</span>(data, <span class="built_in">size</span>);</span><br><span class="line">    ofs.<span class="built_in">close</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// _USER_DEBUG</span></span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>函数调用的错误信息整理</li>
+</ol>
+<p>比如，在我们的产品代码中，在错误发生时通常需要输出错误的日志信息。之前的错误日志打印函数是这样的：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">IRTFunctor::LogNotifyError</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span> &amp;errorInfo, <span class="keyword">bool</span> isLogInFunction)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (!m_bErrorHappenedFlag)</span><br><span class="line">	&#123;</span><br><span class="line">		m_bErrorHappenedFlag = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (isLogInFunction)</span><br><span class="line">		&#123;</span><br><span class="line">			LOG2_ERROR(m_logger, errorInfo);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">uint64_t</span> svcUid = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span> (!Img::SvcUidParser::FindSvcUid(errorInfo, svcUid))</span><br><span class="line">		&#123;</span><br><span class="line">			svcUid = uidUnknown_Err1;</span><br><span class="line">			<span class="keyword">const_cast</span>&lt;<span class="built_in">std</span>::<span class="built_in">string</span> &amp;&gt;(errorInfo) = Img::SvcUidParser::SetSvcUid(errorInfo, svcUid);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">auto</span> strSvcUid = Img::SvcUidParser::GetSvcCode(svcUid);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (isLogInFunction)</span><br><span class="line">		&#123;</span><br><span class="line">			LOG2_ERROR_SVC(m_logger, svcUid, errorInfo);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		NotifyJobDetailInfo(strSvcUid);</span><br><span class="line">		NotifyError(errorInfo);</span><br><span class="line">	&#125;</span><br><span class="line">	Sleep(SleepTime);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样打印的一个问题是LOG中只有<code>IRTFunctor::LogNotifyError</code>函数的函数名和打印日志行，不能快速的找到错误发生的地方，改进后：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ILOG_NOTIFY_ERR</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">undef</span> ILOG_NOTIFY_ERR</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ILOG_NOTIFY_ERR(LoggerPtr, SvcUid, ErrStrStream) \</span></span><br><span class="line"><span class="keyword">do</span> &#123; \</span><br><span class="line">	LOG2_ERROR(LoggerPtr, ErrStrStream); \</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">stringstream</span> ss; ss &lt;&lt; ErrStrStream; \</span><br><span class="line">	<span class="keyword">auto</span> errorInfo = Img::SvcUidParser::SetSvcUid(ss.str(), SvcUid); \</span><br><span class="line">	LOG2_ERROR_SVC(LoggerPtr, SvcUid, errorInfo); \</span><br><span class="line">	LogNotifyError(errorInfo, <span class="literal">false</span>); \</span><br><span class="line">&#125; <span class="keyword">while</span>(<span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ILOG_NOTIFY_ERR_NO_SUID</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">undef</span> ILOG_NOTIFY_ERR_NO_SUID</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ILOG_NOTIFY_ERR_NO_SUID(LoggerPtr, ErrStrStream) \</span></span><br><span class="line">	ILOG_NOTIFY_ERR(LoggerPtr, uidUnknown_Err, ErrStrStream)</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>函数定义时抛出异常</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IMG_THROW_ERROR(ErrStr, ExceptionType) \</span></span><br><span class="line">	<span class="keyword">do</span> &#123;\</span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">stringstream</span> ss; ss &lt;&lt; ErrStr &lt;&lt; <span class="string">" ErrLineNumber:"</span> &lt;&lt; __LINE__; \</span><br><span class="line">		<span class="keyword">throw</span> ExceptionType(ss.str()); \</span><br><span class="line">	&#125; <span class="keyword">while</span>(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>CPP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>常用设计模式总结</title>
     <url>/posts/2602918917/</url>
     <content><![CDATA[<p>设计模式是编码的一种经验总结，通过设计模式我们可以实现通用性好，易于扩展，方便维护的接口。</p>
@@ -96,8 +147,8 @@
         <category>编程</category>
       </categories>
       <tags>
-        <tag>设计模式</tag>
         <tag>CPP</tag>
+        <tag>设计模式</tag>
       </tags>
   </entry>
   <entry>
@@ -119,54 +170,24 @@
       </tags>
   </entry>
   <entry>
-    <title>C++编码总结</title>
-    <url>/posts/3707651035/</url>
-    <content><![CDATA[<p>总结日常开发中的一些小知识。</p>
+    <title>Typora中配置图片上传到GitHub</title>
+    <url>/posts/3927440576/</url>
+    <content><![CDATA[<p>在使用markdown写作文档时，图片的插入经常是一件头疼的事情。本地图片的路径设置有一点小小的问题就会导致图片载入失败，原文件移动时图片文件也要跟随着相对移动（如果使用相对路径的话）等等的缺点。如果将图片上传到网络服务器中，只要计算机能够联网，便可以做到一劳永逸。</p>
 <a id="more"></a>
 
-<h2 id="restrict用法"><a href="#restrict用法" class="headerlink" title="restrict用法"></a><code>restrict</code>用法</h2><p>只能用于修饰指针，表示同一块内存不能被别的指针引用。有利于编译器进行优化。</p>
-<p>示例：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">foo</span><span class="params">(<span class="keyword">int</span> *a, <span class="keyword">int</span> *b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    *a = <span class="number">5</span>;</span><br><span class="line">    *b = <span class="number">6</span>;</span><br><span class="line">    <span class="keyword">return</span> *a + *b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">rfoo</span><span class="params">(<span class="keyword">int</span> * __restrict a, <span class="keyword">int</span> * __restrict b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    *a = <span class="number">5</span>;</span><br><span class="line">    *b = <span class="number">6</span>;</span><br><span class="line">    <span class="keyword">return</span> *a + *b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>编译出的汇编代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">foo:</span><br><span class="line">	.seh_endprologue</span><br><span class="line">	movl	$5, (%rcx)</span><br><span class="line">	movl	$6, (%rdx)</span><br><span class="line">	movl	(%rcx), %eax</span><br><span class="line">	addl	$6, %eax</span><br><span class="line">	ret</span><br><span class="line">	.seh_endproc</span><br><span class="line">	.p2align 4,,15</span><br><span class="line">	.globl	rfoo</span><br><span class="line">	.def	rfoo;	.scl	2;	.type	32;	.endef</span><br><span class="line">	.seh_proc	rfoo</span><br><span class="line">rfoo:</span><br><span class="line">	.seh_endprologue</span><br><span class="line">	movl	$11, %eax</span><br><span class="line">	movl	$5, (%rcx)</span><br><span class="line">	movl	$6, (%rdx)</span><br><span class="line">	ret</span><br></pre></td></tr></table></figure>
-
-<h2 id="const用法"><a href="#const用法" class="headerlink" title="const用法"></a><code>const</code>用法</h2><p>如果确定一个变量是只读的，在作用域内不会改变它的值，就将其声明为<code>const</code>。注意<code>const</code>是只读的意思，而不能狭隘的认为是常量。</p>
-<h2 id="extern-quot-C-quot-用法"><a href="#extern-quot-C-quot-用法" class="headerlink" title="extern &quot;C&quot;用法"></a><code>extern &quot;C&quot;</code>用法</h2><ol>
-<li><p>不要在<code>extern &quot;C&quot;</code>的作用范围内中使用<code>namespace</code></p>
-</li>
-<li><p>不要在<code>extern &quot;C&quot;</code>范围内声明的函数签名中使用C++的特性</p>
-</li>
-</ol>
-<p>不规范的写法：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span> &#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> Img &#123;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Function1</span><span class="params">(<span class="keyword">float</span> f1, <span class="keyword">float</span> &amp;f2)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Function2</span><span class="params">(<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">float</span>&gt; &amp;v, <span class="keyword">float</span> *f2)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Function3</span><span class="params">(<span class="keyword">int</span> lhs)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Function3</span><span class="params">(<span class="keyword">float</span> lhs)</span></span>;</span><br><span class="line">    </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">MyStruct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">float</span> *f;</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Function4</span><span class="params">(MyStruct * myStr)</span></span>;</span><br><span class="line">    </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCls</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    MyCls();</span><br><span class="line">    ~MyCls();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-
-<h2 id="宏定义"><a href="#宏定义" class="headerlink" title="宏定义"></a>宏定义</h2><p>尽管我们常说要禁用宏定义，但是它还是有一些优点的。比如常用的：</p>
-<ol>
-<li>使用宏定义进行一些调试代码的条件编译</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> _USER_DEBUG</span></span><br><span class="line"><span class="function"><span class="built_in">std</span>::ofstream <span class="title">ofs</span><span class="params">(<span class="string">"out.raw"</span>, <span class="built_in">std</span>::ios::binary)</span></span>;</span><br><span class="line"><span class="keyword">if</span> (ofs.is_open())</span><br><span class="line">&#123;</span><br><span class="line">    ofs.<span class="built_in">write</span>(data, <span class="built_in">size</span>);</span><br><span class="line">    ofs.<span class="built_in">close</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// _USER_DEBUG</span></span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>函数调用的错误信息整理</li>
-</ol>
-<p>比如，在我们的产品代码中，在错误发生时通常需要输出错误的日志信息。之前的错误日志打印函数是这样的：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">IRTFunctor::LogNotifyError</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span> &amp;errorInfo, <span class="keyword">bool</span> isLogInFunction)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (!m_bErrorHappenedFlag)</span><br><span class="line">	&#123;</span><br><span class="line">		m_bErrorHappenedFlag = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (isLogInFunction)</span><br><span class="line">		&#123;</span><br><span class="line">			LOG2_ERROR(m_logger, errorInfo);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">uint64_t</span> svcUid = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span> (!Img::SvcUidParser::FindSvcUid(errorInfo, svcUid))</span><br><span class="line">		&#123;</span><br><span class="line">			svcUid = uidUnknown_Err1;</span><br><span class="line">			<span class="keyword">const_cast</span>&lt;<span class="built_in">std</span>::<span class="built_in">string</span> &amp;&gt;(errorInfo) = Img::SvcUidParser::SetSvcUid(errorInfo, svcUid);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">auto</span> strSvcUid = Img::SvcUidParser::GetSvcCode(svcUid);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (isLogInFunction)</span><br><span class="line">		&#123;</span><br><span class="line">			LOG2_ERROR_SVC(m_logger, svcUid, errorInfo);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		NotifyJobDetailInfo(strSvcUid);</span><br><span class="line">		NotifyError(errorInfo);</span><br><span class="line">	&#125;</span><br><span class="line">	Sleep(SleepTime);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这样打印的一个问题是LOG中只有<code>IRTFunctor::LogNotifyError</code>函数的函数名和打印日志行，不能快速的找到错误发生的地方，改进后：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ILOG_NOTIFY_ERR</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">undef</span> ILOG_NOTIFY_ERR</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ILOG_NOTIFY_ERR(LoggerPtr, SvcUid, ErrStrStream) \</span></span><br><span class="line"><span class="keyword">do</span> &#123; \</span><br><span class="line">	LOG2_ERROR(LoggerPtr, ErrStrStream); \</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">stringstream</span> ss; ss &lt;&lt; ErrStrStream; \</span><br><span class="line">	<span class="keyword">auto</span> errorInfo = Img::SvcUidParser::SetSvcUid(ss.str(), SvcUid); \</span><br><span class="line">	LOG2_ERROR_SVC(LoggerPtr, SvcUid, errorInfo); \</span><br><span class="line">	LogNotifyError(errorInfo, <span class="literal">false</span>); \</span><br><span class="line">&#125; <span class="keyword">while</span>(<span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ILOG_NOTIFY_ERR_NO_SUID</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">undef</span> ILOG_NOTIFY_ERR_NO_SUID</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ILOG_NOTIFY_ERR_NO_SUID(LoggerPtr, ErrStrStream) \</span></span><br><span class="line">	ILOG_NOTIFY_ERR(LoggerPtr, uidUnknown_Err, ErrStrStream)</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>函数定义时抛出异常</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IMG_THROW_ERROR(ErrStr, ExceptionType) \</span></span><br><span class="line">	<span class="keyword">do</span> &#123;\</span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">stringstream</span> ss; ss &lt;&lt; ErrStr &lt;&lt; <span class="string">" ErrLineNumber:"</span> &lt;&lt; __LINE__; \</span><br><span class="line">		<span class="keyword">throw</span> ExceptionType(ss.str()); \</span><br><span class="line">	&#125; <span class="keyword">while</span>(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<p>Typora设置图片上传的步骤分为以下5步</p>
+<p><img src="/images/20200506/1588698840.jpg" alt="Typora图片上传设置步骤"></p>
+<p><a href="https://github.com/settings/tokens" target="_blank" rel="noopener">token创建</a></p>
+<p>配置文件设置</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"picBed"</span>: &#123;</span><br><span class="line">    <span class="attr">"github"</span>: &#123;</span><br><span class="line">      <span class="attr">"repo"</span>: <span class="string">"用户名/图床仓库名"</span>,</span><br><span class="line">      <span class="attr">"token"</span>: <span class="string">""</span>,</span><br><span class="line">      <span class="attr">"path"</span>: <span class="string">"img/"</span>,</span><br><span class="line">      <span class="attr">"customUrl"</span>: <span class="string">"https://raw.githubusercontent.com/用户名/图床仓库名/master"</span>,</span><br><span class="line">      <span class="attr">"branch"</span>: <span class="string">"master"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"current"</span>: <span class="string">"github"</span>,</span><br><span class="line">    <span class="attr">"uploader"</span>: <span class="string">"github"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"picgoPlugins"</span>: &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
-        <category>编程</category>
+        <category>软件使用</category>
       </categories>
       <tags>
-        <tag>CPP</tag>
+        <tag>markdown</tag>
+        <tag>Typora</tag>
       </tags>
   </entry>
   <entry>
@@ -343,20 +364,20 @@
 <p>输入矩阵的大小：$n$</p>
 <p>那么卷积后输出的个数为：<br>$$<br>\frac {n + 2 * p - f}{s} + 1 向下取整<br>$$</p>
 <p>对image，移动卷积核1可以得到经过卷积后的矩阵。</p>
-<p><img src=".%5Cassert%5C20200508%5Cchapter21-11.png" alt="卷积核1"></p>
+<p><img src="/images/20200508/chapter21-11.png" alt="卷积核1"></p>
 <p>不同的卷积核，提取图像的不同特征，设有另外的一个卷积核2，经过运算后得到了另外一个$4 \times 4$的矩阵。红色和蓝色的矩阵合起来叫feature map。有多少个卷积核，就会得到多少个特征。（如果有100个卷积核，就会得到一个$100 \times 4 \times 4$的立方体。）</p>
-<p><img src=".%5Cassert%5C20200508%5Cchapter21-12.png" alt="卷积核2"></p>
+<p><img src="/images/20200508/chapter21-12.png" alt="卷积核2"></p>
 <p>convolution相当于fully connected的某些参数共享权重。</p>
 <h3 id="池化"><a href="#池化" class="headerlink" title="池化"></a>池化</h3><p>池化后，每一个卷积输出的矩阵的大小为：<br>$$<br>\frac {n - f} {s} + 1<br>$$<br>这里的$n$是卷积输出的矩阵的大小。</p>
 <p>max pooling的过程</p>
-<p><img src=".%5Cassert%5C20200508%5Cchapter21-18.png" alt="max pooling过程"></p>
+<p><img src="/images/20200508/chapter21-18.png" alt="max pooling过程"></p>
 <p>max pooling的结果</p>
-<p><img src=".%5Cassert%5C20200508%5Cchapter21-19.png" alt="max pooling结果"></p>
+<p><img src="/images/20200508/chapter21-19.png" alt="max pooling结果"></p>
 <p>设有100个卷积核，经过max pooling后就得到了一个$100 \times 2 \times2$立方体。一个卷积核就代表一个channel，即有100个channel。那么下一个卷积核的大小就是$100 \times 3 \times 3$？。</p>
-<h3 id="Flatten"><a href="#Flatten" class="headerlink" title="Flatten"></a>Flatten</h3><p><img src=".%5Cassert%5C20200508%5Cchapter21-22.png" alt="flatten"></p>
+<h3 id="Flatten"><a href="#Flatten" class="headerlink" title="Flatten"></a>Flatten</h3><p><img src="/images/20200508/chapter21-22.png" alt="flatten"></p>
 <h3 id="全连接"><a href="#全连接" class="headerlink" title="全连接"></a>全连接</h3><p>由于我们的特征都是矩阵的形式，因此全连接前，还要把特征进行压扁，将这些特征变成一维的向量。</p>
 <p>如果是分类，使用<code>softmax</code>作为输出；如果是回归的问题，直接使用<code>linear</code>。</p>
-<p><img src=".%5Cassert%5C20200508%5Cchapter21-25.png" alt="CNN一个完整的例子"></p>
+<p><img src="/images/20200508/chapter21-25.png" alt="CNN一个完整的例子"></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><p><a href="https://cs.nyu.edu/~fergus/papers/zeilerECCV2014.pdf" target="_blank" rel="noopener">为什么要用CNN</a></p>
 </li>
@@ -378,27 +399,6 @@
       <tags>
         <tag>PyTorch</tag>
         <tag>CNN</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Typora中配置图片上传到GitHub</title>
-    <url>/posts/3927440576/</url>
-    <content><![CDATA[<p>在使用markdown写作文档时，图片的插入经常是一件头疼的事情。本地图片的路径设置有一点小小的问题就会导致图片载入失败，原文件移动时图片文件也要跟随着相对移动（如果使用相对路径的话）等等的缺点。如果将图片上传到网络服务器中，只要计算机能够联网，便可以做到一劳永逸。</p>
-<a id="more"></a>
-
-<p>Typora设置图片上传的步骤分为以下5步</p>
-<p><img src="./assert/20200506/1588698840.jpg" alt="Typora图片上传设置步骤"></p>
-<p><a href="https://github.com/settings/tokens" target="_blank" rel="noopener">token创建</a></p>
-<p>配置文件设置</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"picBed"</span>: &#123;</span><br><span class="line">    <span class="attr">"github"</span>: &#123;</span><br><span class="line">      <span class="attr">"repo"</span>: <span class="string">"用户名/图床仓库名"</span>,</span><br><span class="line">      <span class="attr">"token"</span>: <span class="string">""</span>,</span><br><span class="line">      <span class="attr">"path"</span>: <span class="string">"img/"</span>,</span><br><span class="line">      <span class="attr">"customUrl"</span>: <span class="string">"https://raw.githubusercontent.com/用户名/图床仓库名/master"</span>,</span><br><span class="line">      <span class="attr">"branch"</span>: <span class="string">"master"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"current"</span>: <span class="string">"github"</span>,</span><br><span class="line">    <span class="attr">"uploader"</span>: <span class="string">"github"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"picgoPlugins"</span>: &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>软件使用</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-        <tag>Typora</tag>
       </tags>
   </entry>
 </search>

@@ -85,19 +85,19 @@
 <meta property="og:url" content="http://hkeeplearning.github.io/posts/3329651476/index.html">
 <meta property="og:site_name" content="hyy&#39;s blog">
 <meta property="og:description" content="卷积神经网络是由一个或者多个卷积层和一个全连接层组成的前馈神经网络。特别适合于提取图像特征。">
-<meta property="og:image" content="http://hkeeplearning.github.io/posts/3329651476/.%5Cassert%5C20200508%5Cchapter21-11.png">
-<meta property="og:image" content="http://hkeeplearning.github.io/posts/3329651476/.%5Cassert%5C20200508%5Cchapter21-12.png">
-<meta property="og:image" content="http://hkeeplearning.github.io/posts/3329651476/.%5Cassert%5C20200508%5Cchapter21-18.png">
-<meta property="og:image" content="http://hkeeplearning.github.io/posts/3329651476/.%5Cassert%5C20200508%5Cchapter21-19.png">
-<meta property="og:image" content="http://hkeeplearning.github.io/posts/3329651476/.%5Cassert%5C20200508%5Cchapter21-22.png">
-<meta property="og:image" content="http://hkeeplearning.github.io/posts/3329651476/.%5Cassert%5C20200508%5Cchapter21-25.png">
+<meta property="og:image" content="http://hkeeplearning.github.io/images/20200508/chapter21-11.png">
+<meta property="og:image" content="http://hkeeplearning.github.io/images/20200508/chapter21-12.png">
+<meta property="og:image" content="http://hkeeplearning.github.io/images/20200508/chapter21-18.png">
+<meta property="og:image" content="http://hkeeplearning.github.io/images/20200508/chapter21-19.png">
+<meta property="og:image" content="http://hkeeplearning.github.io/images/20200508/chapter21-22.png">
+<meta property="og:image" content="http://hkeeplearning.github.io/images/20200508/chapter21-25.png">
 <meta property="article:published_time" content="2020-05-06T07:11:48.000Z">
-<meta property="article:modified_time" content="2020-05-09T13:37:36.272Z">
+<meta property="article:modified_time" content="2020-05-09T14:38:33.830Z">
 <meta property="article:author" content="hyy">
 <meta property="article:tag" content="PyTorch">
 <meta property="article:tag" content="CNN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://hkeeplearning.github.io/posts/3329651476/.%5Cassert%5C20200508%5Cchapter21-11.png">
+<meta name="twitter:image" content="http://hkeeplearning.github.io/images/20200508/chapter21-11.png">
 
 
 
@@ -448,20 +448,20 @@
 <p>输入矩阵的大小：$n$</p>
 <p>那么卷积后输出的个数为：<br>$$<br>\frac {n + 2 * p - f}{s} + 1 向下取整<br>$$</p>
 <p>对image，移动卷积核1可以得到经过卷积后的矩阵。</p>
-<p><img src=".%5Cassert%5C20200508%5Cchapter21-11.png" alt="卷积核1"></p>
+<p><img src="/images/20200508/chapter21-11.png" alt="卷积核1"></p>
 <p>不同的卷积核，提取图像的不同特征，设有另外的一个卷积核2，经过运算后得到了另外一个$4 \times 4$的矩阵。红色和蓝色的矩阵合起来叫feature map。有多少个卷积核，就会得到多少个特征。（如果有100个卷积核，就会得到一个$100 \times 4 \times 4$的立方体。）</p>
-<p><img src=".%5Cassert%5C20200508%5Cchapter21-12.png" alt="卷积核2"></p>
+<p><img src="/images/20200508/chapter21-12.png" alt="卷积核2"></p>
 <p>convolution相当于fully connected的某些参数共享权重。</p>
 <h3 id="池化"><a href="#池化" class="headerlink" title="池化"></a>池化</h3><p>池化后，每一个卷积输出的矩阵的大小为：<br>$$<br>\frac {n - f} {s} + 1<br>$$<br>这里的$n$是卷积输出的矩阵的大小。</p>
 <p>max pooling的过程</p>
-<p><img src=".%5Cassert%5C20200508%5Cchapter21-18.png" alt="max pooling过程"></p>
+<p><img src="/images/20200508/chapter21-18.png" alt="max pooling过程"></p>
 <p>max pooling的结果</p>
-<p><img src=".%5Cassert%5C20200508%5Cchapter21-19.png" alt="max pooling结果"></p>
+<p><img src="/images/20200508/chapter21-19.png" alt="max pooling结果"></p>
 <p>设有100个卷积核，经过max pooling后就得到了一个$100 \times 2 \times2$立方体。一个卷积核就代表一个channel，即有100个channel。那么下一个卷积核的大小就是$100 \times 3 \times 3$？。</p>
-<h3 id="Flatten"><a href="#Flatten" class="headerlink" title="Flatten"></a>Flatten</h3><p><img src=".%5Cassert%5C20200508%5Cchapter21-22.png" alt="flatten"></p>
+<h3 id="Flatten"><a href="#Flatten" class="headerlink" title="Flatten"></a>Flatten</h3><p><img src="/images/20200508/chapter21-22.png" alt="flatten"></p>
 <h3 id="全连接"><a href="#全连接" class="headerlink" title="全连接"></a>全连接</h3><p>由于我们的特征都是矩阵的形式，因此全连接前，还要把特征进行压扁，将这些特征变成一维的向量。</p>
 <p>如果是分类，使用<code>softmax</code>作为输出；如果是回归的问题，直接使用<code>linear</code>。</p>
-<p><img src=".%5Cassert%5C20200508%5Cchapter21-25.png" alt="CNN一个完整的例子"></p>
+<p><img src="/images/20200508/chapter21-25.png" alt="CNN一个完整的例子"></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><p><a href="https://cs.nyu.edu/~fergus/papers/zeilerECCV2014.pdf" target="_blank" rel="noopener">为什么要用CNN</a></p>
 </li>
