@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="PyTorch,CNN," />
 
 
 
@@ -79,14 +79,25 @@
 
 
 
-<meta name="description" content="人生如有幽约在身，不敢怠慢。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="hyy&#39;s blog">
-<meta property="og:url" content="http://hkeeplearning.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.html">
+<meta name="description" content="卷积神经网络是由一个或者多个卷积层和一个全连接层组成的前馈神经网络。特别适合于提取图像特征。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="卷积神经网络">
+<meta property="og:url" content="http://hkeeplearning.github.io/posts/3329651476/index.html">
 <meta property="og:site_name" content="hyy&#39;s blog">
-<meta property="og:description" content="人生如有幽约在身，不敢怠慢。">
+<meta property="og:description" content="卷积神经网络是由一个或者多个卷积层和一个全连接层组成的前馈神经网络。特别适合于提取图像特征。">
+<meta property="og:image" content="http://hkeeplearning.github.io/posts/3329651476/.%5Cassert%5C20200508%5Cchapter21-11.png">
+<meta property="og:image" content="http://hkeeplearning.github.io/posts/3329651476/.%5Cassert%5C20200508%5Cchapter21-12.png">
+<meta property="og:image" content="http://hkeeplearning.github.io/posts/3329651476/.%5Cassert%5C20200508%5Cchapter21-18.png">
+<meta property="og:image" content="http://hkeeplearning.github.io/posts/3329651476/.%5Cassert%5C20200508%5Cchapter21-19.png">
+<meta property="og:image" content="http://hkeeplearning.github.io/posts/3329651476/.%5Cassert%5C20200508%5Cchapter21-22.png">
+<meta property="og:image" content="http://hkeeplearning.github.io/posts/3329651476/.%5Cassert%5C20200508%5Cchapter21-25.png">
+<meta property="article:published_time" content="2020-05-06T07:11:48.000Z">
+<meta property="article:modified_time" content="2020-05-09T13:37:36.272Z">
 <meta property="article:author" content="hyy">
+<meta property="article:tag" content="PyTorch">
+<meta property="article:tag" content="CNN">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://hkeeplearning.github.io/posts/3329651476/.%5Cassert%5C20200508%5Cchapter21-11.png">
 
 
 
@@ -116,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://hkeeplearning.github.io/categories/深度学习/"/>
+  <link rel="canonical" href="http://hkeeplearning.github.io/posts/3329651476/"/>
 
 
 
 
 
-  <title>分类: 深度学习 | hyy's blog</title>
+  <title>卷积神经网络 | hyy's blog</title>
   
 
 
@@ -150,7 +161,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -278,83 +289,254 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>深度学习<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hkeeplearning.github.io/posts/3329651476/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hyy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hyy's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/posts/3329651476/" itemprop="url">
-              
-                <span itemprop="name">卷积神经网络</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">卷积神经网络</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-05-06T15:11:48+08:00"
-              content="2020-05-06" >
-          05-06
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-06T15:11:48+08:00">
+                2020-05-06
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">深度学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/3329651476/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/3329651476/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/3329651476/" class="leancloud_visitors" data-flag-title="卷积神经网络">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>卷积神经网络是由一个或者多个卷积层和一个全连接层组成的前馈神经网络。特别适合于提取图像特征。</p>
+<a id="more"></a>
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/posts/3233011741/" itemprop="url">
-              
-                <span itemprop="name">深度学习基础</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-05-05T23:11:48+08:00"
-              content="2020-05-05" >
-          05-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+<h2 id="卷积神经网络的必要性"><a href="#卷积神经网络的必要性" class="headerlink" title="卷积神经网络的必要性"></a>卷积神经网络的必要性</h2><ul>
+<li><p>减少图像处理的计算量</p>
+</li>
+<li><p>卷积的特性特别适合于提取图像特征</p>
+</li>
+</ul>
+<p>在一幅图像中，</p>
+<ol>
+<li><p>特征通常在很小的一个区域</p>
+</li>
+<li><p>相同的一个特征可能出现在图像中的不同位置</p>
+</li>
+<li><p>图像的subsampling不影响对这幅图像的理解</p>
+</li>
+</ol>
+<p>因此我们可以简化模型参数。</p>
+<h2 id="卷积神经网络的结构"><a href="#卷积神经网络的结构" class="headerlink" title="卷积神经网络的结构"></a>卷积神经网络的结构</h2><ol>
+<li>卷积层（convolution layer）</li>
+<li>激活函数（卷积的操作也是线性的，需要激活函数，引入非线性的因素）</li>
+<li>池化（max pooling）</li>
+<li>dropout</li>
+<li>压扁（flatten）</li>
+<li>全连接（fully connected feedforward network）</li>
+</ol>
+<p>1, 2, 3过程可以重复很多次。</p>
+<p>对影像的处理：第一，要生成一个pattern，不需要看整张的image，你只需要看image的一小部分；第二，通用的pattern会出现在一张image的不同的区域；第三，我们可以对image做subsampling。</p>
+<h3 id="卷积层"><a href="#卷积层" class="headerlink" title="卷积层"></a>卷积层</h3><p>卷积核大小：$f$</p>
+<p>图像边界填充的的大小：$p$</p>
+<p>卷积核滑动的步长：$s$</p>
+<p>输入矩阵的大小：$n$</p>
+<p>那么卷积后输出的个数为：<br>$$<br>\frac {n + 2 * p - f}{s} + 1 向下取整<br>$$</p>
+<p>对image，移动卷积核1可以得到经过卷积后的矩阵。</p>
+<p><img src=".%5Cassert%5C20200508%5Cchapter21-11.png" alt="卷积核1"></p>
+<p>不同的卷积核，提取图像的不同特征，设有另外的一个卷积核2，经过运算后得到了另外一个$4 \times 4$的矩阵。红色和蓝色的矩阵合起来叫feature map。有多少个卷积核，就会得到多少个特征。（如果有100个卷积核，就会得到一个$100 \times 4 \times 4$的立方体。）</p>
+<p><img src=".%5Cassert%5C20200508%5Cchapter21-12.png" alt="卷积核2"></p>
+<p>convolution相当于fully connected的某些参数共享权重。</p>
+<h3 id="池化"><a href="#池化" class="headerlink" title="池化"></a>池化</h3><p>池化后，每一个卷积输出的矩阵的大小为：<br>$$<br>\frac {n - f} {s} + 1<br>$$<br>这里的$n$是卷积输出的矩阵的大小。</p>
+<p>max pooling的过程</p>
+<p><img src=".%5Cassert%5C20200508%5Cchapter21-18.png" alt="max pooling过程"></p>
+<p>max pooling的结果</p>
+<p><img src=".%5Cassert%5C20200508%5Cchapter21-19.png" alt="max pooling结果"></p>
+<p>设有100个卷积核，经过max pooling后就得到了一个$100 \times 2 \times2$立方体。一个卷积核就代表一个channel，即有100个channel。那么下一个卷积核的大小就是$100 \times 3 \times 3$？。</p>
+<h3 id="Flatten"><a href="#Flatten" class="headerlink" title="Flatten"></a>Flatten</h3><p><img src=".%5Cassert%5C20200508%5Cchapter21-22.png" alt="flatten"></p>
+<h3 id="全连接"><a href="#全连接" class="headerlink" title="全连接"></a>全连接</h3><p>由于我们的特征都是矩阵的形式，因此全连接前，还要把特征进行压扁，将这些特征变成一维的向量。</p>
+<p>如果是分类，使用<code>softmax</code>作为输出；如果是回归的问题，直接使用<code>linear</code>。</p>
+<p><img src=".%5Cassert%5C20200508%5Cchapter21-25.png" alt="CNN一个完整的例子"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><p><a href="https://cs.nyu.edu/~fergus/papers/zeilerECCV2014.pdf" target="_blank" rel="noopener">为什么要用CNN</a></p>
+</li>
+<li><p><a href="http://yann.lecun.com/exdb/lenet/index.html" target="_blank" rel="noopener">LeNet-5, convolutional neural networks</a></p>
+</li>
+<li><p><a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf" target="_blank" rel="noopener">AlexNet</a></p>
+</li>
+<li><p><a href="https://arxiv.org/pdf/1409.1556.pdf" target="_blank" rel="noopener">VGG</a></p>
+</li>
+<li><p><a href="https://arxiv.org/abs/1512.00567" target="_blank" rel="noopener">GoogLeNet </a></p>
+</li>
+<li><p><a href="https://arxiv.org/abs/1512.03385" target="_blank" rel="noopener">ResNet</a></p>
+</li>
+</ul>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PyTorch/" rel="tag"># PyTorch</a>
+          
+            <a href="/tags/CNN/" rel="tag"># CNN</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/3927440576/" rel="next" title="Typora中配置图片上传到GitHub">
+                <i class="fa fa-chevron-left"></i> Typora中配置图片上传到GitHub
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -362,6 +544,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -382,8 +571,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -459,6 +657,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#卷积神经网络的必要性"><span class="nav-number">1.</span> <span class="nav-text">卷积神经网络的必要性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卷积神经网络的结构"><span class="nav-number">2.</span> <span class="nav-text">卷积神经网络的结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#卷积层"><span class="nav-number">2.1.</span> <span class="nav-text">卷积层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#池化"><span class="nav-number">2.2.</span> <span class="nav-text">池化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flatten"><span class="nav-number">2.3.</span> <span class="nav-text">Flatten</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全连接"><span class="nav-number">2.4.</span> <span class="nav-text">全连接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -599,6 +813,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

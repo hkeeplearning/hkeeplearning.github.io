@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="PyTorch,深度学习基础," />
+  <meta name="keywords" content="PyTorch,理论," />
 
 
 
@@ -86,10 +86,10 @@
 <meta property="og:site_name" content="hyy&#39;s blog">
 <meta property="og:description" content="深度学习所用到的数学知识并没有特别高深，其中最重要的是损失函数，梯度下降和激活函数。">
 <meta property="article:published_time" content="2020-05-05T15:11:48.000Z">
-<meta property="article:modified_time" content="2020-05-05T16:27:38.402Z">
+<meta property="article:modified_time" content="2020-05-09T13:17:59.908Z">
 <meta property="article:author" content="hyy">
 <meta property="article:tag" content="PyTorch">
-<meta property="article:tag" content="深度学习基础">
+<meta property="article:tag" content="理论">
 <meta name="twitter:card" content="summary">
 
 
@@ -412,8 +412,14 @@
 <h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><p>损失函数使用来估量模型和预测值和真实值之间的不一样程度，它是一个非负的实数。损失函数的值越小，表示模型越好。</p>
 <h3 id="均方差损失函数"><a href="#均方差损失函数" class="headerlink" title="均方差损失函数"></a>均方差损失函数</h3><p>$$<br>MSE =<br>$$</p>
 <h3 id="绝对误差"><a href="#绝对误差" class="headerlink" title="绝对误差"></a>绝对误差</h3><p>$$<br>MAE=<br>$$</p>
-<h3 id="交叉熵损失函数"><a href="#交叉熵损失函数" class="headerlink" title="交叉熵损失函数"></a>交叉熵损失函数</h3><p>概率估计上定义，</p>
-<h2 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h2><h3 id="SGD"><a href="#SGD" class="headerlink" title="SGD"></a>SGD</h3><h3 id="RMSProp"><a href="#RMSProp" class="headerlink" title="RMSProp"></a>RMSProp</h3><h3 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h3><h2 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h2><p>在神经网络的计算过程中，每层都相当于一个矩阵相乘，所以无论多少层的神经网络都是输入的线性组合。所以需要激活函数来引入非线性的因素，使得神经网络可以逼近任何非线性函数，增加模型的泛化特性。</p>
+<h3 id="交叉熵损失函数"><a href="#交叉熵损失函数" class="headerlink" title="交叉熵损失函数"></a>交叉熵损失函数</h3><p>概率估计上定义，<br>$$<br>CrossEntropy=<br>$$<br>多分类</p>
+<h2 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h2><h3 id="SGD"><a href="#SGD" class="headerlink" title="SGD"></a>SGD</h3><p>$$<br>w \leftarrow w - \eta \frac{\partial L}{\partial w}<br>$$</p>
+<p><strong>Momentum</strong><br>$$<br>\nabla = \lambda {\nabla}<em>{i - 1} + \eta {\nabla}</em>{i}<br>$$</p>
+<p>$$<br>w \leftarrow w - \nabla<br>$$</p>
+<h3 id="RMSProp"><a href="#RMSProp" class="headerlink" title="RMSProp"></a>RMSProp</h3><p>$$<br>E[\nabla ^2] = 0.9E[\nabla ^2]_{i - 1} + 0.1 \nabla _i^2<br>$$</p>
+<p>$$<br>w \leftarrow w - \frac{\eta}{\sqrt{E[\nabla ^2] + p}} \nabla_i<br>$$</p>
+<h3 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h3><p><strong>相当于 RMSprop + Momentum</strong></p>
+<h2 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h2><p>在神经网络的计算过程中，每层都相当于一个矩阵相乘，所以无论多少层的神经网络都是输入的线性组合。所以需要激活函数来引入非线性的因素，使得神经网络可以逼近任何非线性函数，增加模型的泛化特性。</p>
 <h3 id="sigmoid"><a href="#sigmoid" class="headerlink" title="sigmoid"></a>sigmoid</h3><p>$$<br>s(x) = \frac{1}{1 + {e}^{-x}}<br>$$</p>
 <p>导数为：<br>$$<br>\frac {\partial s(x)}{\partial x} = s(x)(1-s(x))<br>$$</p>
 <ul>
@@ -421,11 +427,22 @@
 <li><em>函数的输出不是以0为中心，这样会使权重更新效率降低（Why？）</em>，<a href="https://liam.page/2018/04/17/zero-centered-active-function/" target="_blank" rel="noopener">参考</a></li>
 </ul>
 <p>更新效率即指函数的收敛速度，迭代次数越多，说明模型的收敛速度越慢；反之，迭代次数少，则表明收敛速度快。</p>
-<p>深度学习的一般方法即方向传播，即链式法则。<br>$$<br>w \leftarrow w - \eta \frac {\partial L}{\partial w}<br>$$<br>对某一个神经元，其输入输出关系是<br>$$<br>f(\vec x;\vec w, b) = f(\sum w_i x_i + b)<br>$$<br>因此，对某一个参数$w_i$来说<br>$$<br>\frac {\partial L}{\partial w_i} = \frac {\partial L}{\partial f} \frac {\partial f}{\partial z} \frac {\partial z}{\partial w_i} = x_i \frac {\partial L}{\partial f} \frac {\partial f}{\partial z}<br>$$<br>因此，对于某一个参数，其更新过程为<br>$$<br>w_i \leftarrow w_i - \eta \frac {\partial L}{\partial w_i} = w_i - \eta x_i \frac {\partial L}{\partial f} \frac {\partial f}{\partial z}<br>$$</p>
+<p>深度学习的一般方法是反向传播，即链式法则。<br>$$<br>w \leftarrow w - \eta \frac {\partial L}{\partial w}<br>$$<br>对某一个神经元，其输入输出关系是<br>$$<br>f(\vec x;\vec w, b) = f(\sum w_i x_i + b)<br>$$<br>因此，对某一个参数$w_i$来说<br>$$<br>\frac {\partial L}{\partial w_i} = \frac {\partial L}{\partial f} \frac {\partial f}{\partial z} \frac {\partial z}{\partial w_i} = x_i \frac {\partial L}{\partial f} \frac {\partial f}{\partial z}<br>$$<br>因此，对于某一个参数，其更新过程为<br>$$<br>w_i \leftarrow w_i - \eta \frac {\partial L}{\partial w_i} = w_i - \eta x_i \frac {\partial L}{\partial f} \frac {\partial f}{\partial z}<br>$$</p>
 <p>参数$w_i$的实际更新方向由$\frac {\partial L}{\partial f} \frac {\partial f}{\partial z}$决定。另外，从上式也可以看出对于任意一个$w_i$，$\frac {\partial L}{\partial f} \frac {\partial f}{\partial z}$都是常数，所以各个$w_i$更新方向的差异，完全由输入值$x_i$决定。</p>
 <p><strong>以零为中心的影响：</strong></p>
-<p>以二维输入为例<br>$$<br>f(\vec x;\vec w, b) = f(w_0 x_0 + w_1 x_1 + b)<br>$$<br>现在假设参数$w_0$，$w_1$的最优解是${\hat w}_0$，${\hat w}_1$，且满足条件<br>$$<br>w_0 \lt {\hat w}_0, w_1 \ge {\hat w}_1<br>$$<br>这说明，$w_0$希望增大，而$w_1$需要适当减小。因此要求$x_0$和$x_1$的符号相反，但是在sigmoid函数中，输出值始终未正。这也就是说，如果上一级神经元采用sigmoid函数作为激活函数，那么我们总无法做到$x_0$和$x_1$符号相反。</p>
-<h3 id="tanh"><a href="#tanh" class="headerlink" title="tanh"></a>tanh</h3><h3 id="relu"><a href="#relu" class="headerlink" title="relu"></a>relu</h3><h3 id="leaky-relu"><a href="#leaky-relu" class="headerlink" title="leaky relu"></a>leaky relu</h3>
+<p>以二维输入为例<br>$$<br>f(\vec x;\vec w, b) = f(w_0 x_0 + w_1 x_1 + b)<br>$$<br>现在假设参数$w_0$，$w_1$的最优解是$w_0^<em>$，$w_1^</em>$，且满足条件<br>$$<br>w_0 \lt w_0^<em>, w_1 \ge w_1^</em><br>$$<br>这说明，$w_0$希望增大，而$w_1$需要适当减小。因此要求$x_0$和$x_1$的符号相反，但是在sigmoid函数中，输出值始终未正。这也就是说，如果上一级神经元采用sigmoid函数作为激活函数，那么我们总无法做到$x_0$和$x_1$符号相反。</p>
+<h3 id="tanh"><a href="#tanh" class="headerlink" title="tanh"></a>tanh</h3><p>$$<br>s(x) = \frac {e^z - e^{-z}}{e^z + e^{-z}}<br>$$</p>
+<p>导数为：<br>$$<br>\frac {\partial s(x)}{\partial x} = 1 - s(x)^2<br>$$</p>
+<p>当输入远离坐标原点时，同sigmoid函数类似，梯度会变小，使得参数的更新速度下降。</p>
+<h3 id="relu"><a href="#relu" class="headerlink" title="relu"></a>relu</h3><p>$$<br>s(x) = max(0, x)<br>$$</p>
+<p>其导数为<br>$$<br>当x &gt; 0时，为1；当x &lt; 0时，为0<br>$$</p>
+<h3 id="leaky-relu"><a href="#leaky-relu" class="headerlink" title="leaky relu"></a>leaky relu</h3><p>为了解决relu函数在$z \lt 0$时参数不被更新的问题，出现了leaky relu函数<br>$$<br>s(x) = x, x \ge 0; s(x) = ax, x \lt 0, a通常是一个很小的值<br>$$</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li><a href="https://arxiv.org/pdf/1609.04747.pdf" target="_blank" rel="noopener">An overview of gradient descent optimization  algorithm</a></li>
+<li><a href="https://github.com/zergtant/pytorch-handbook/blob/master/chapter2/2.2-deep-learning-basic-mathematics.ipynb" target="_blank" rel="noopener">深度学习基础和数学远离</a></li>
+<li><a href="https://liam.page/2018/04/17/zero-centered-active-function/" target="_blank" rel="noopener">激活函数过零点的好处</a></li>
+</ul>
+
       
     </div>
     
@@ -444,7 +461,7 @@
           
             <a href="/tags/PyTorch/" rel="tag"># PyTorch</a>
           
-            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" rel="tag"># 深度学习基础</a>
+            <a href="/tags/%E7%90%86%E8%AE%BA/" rel="tag"># 理论</a>
           
         </div>
       
@@ -466,6 +483,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/3927440576/" rel="prev" title="Typora中配置图片上传到GitHub">
+                Typora中配置图片上传到GitHub <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -545,7 +566,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -556,7 +577,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -567,7 +588,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -616,7 +637,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#损失函数"><span class="nav-number">1.</span> <span class="nav-text">损失函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#均方差损失函数"><span class="nav-number">1.1.</span> <span class="nav-text">均方差损失函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绝对误差"><span class="nav-number">1.2.</span> <span class="nav-text">绝对误差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交叉熵损失函数"><span class="nav-number">1.3.</span> <span class="nav-text">交叉熵损失函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降"><span class="nav-number">2.</span> <span class="nav-text">梯度下降</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SGD"><span class="nav-number">2.1.</span> <span class="nav-text">SGD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RMSProp"><span class="nav-number">2.2.</span> <span class="nav-text">RMSProp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adam"><span class="nav-number">2.3.</span> <span class="nav-text">Adam</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#激活函数"><span class="nav-number">3.</span> <span class="nav-text">激活函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sigmoid"><span class="nav-number">3.1.</span> <span class="nav-text">sigmoid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tanh"><span class="nav-number">3.2.</span> <span class="nav-text">tanh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#relu"><span class="nav-number">3.3.</span> <span class="nav-text">relu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#leaky-relu"><span class="nav-number">3.4.</span> <span class="nav-text">leaky relu</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#损失函数"><span class="nav-number">1.</span> <span class="nav-text">损失函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#均方差损失函数"><span class="nav-number">1.1.</span> <span class="nav-text">均方差损失函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绝对误差"><span class="nav-number">1.2.</span> <span class="nav-text">绝对误差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交叉熵损失函数"><span class="nav-number">1.3.</span> <span class="nav-text">交叉熵损失函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降"><span class="nav-number">2.</span> <span class="nav-text">梯度下降</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SGD"><span class="nav-number">2.1.</span> <span class="nav-text">SGD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RMSProp"><span class="nav-number">2.2.</span> <span class="nav-text">RMSProp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adam"><span class="nav-number">2.3.</span> <span class="nav-text">Adam</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#激活函数"><span class="nav-number">3.</span> <span class="nav-text">激活函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sigmoid"><span class="nav-number">3.1.</span> <span class="nav-text">sigmoid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tanh"><span class="nav-number">3.2.</span> <span class="nav-text">tanh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#relu"><span class="nav-number">3.3.</span> <span class="nav-text">relu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#leaky-relu"><span class="nav-number">3.4.</span> <span class="nav-text">leaky relu</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">4.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>
