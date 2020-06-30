@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="GitHub," />
+  <meta name="keywords" content="设计模式,C++," />
 
 
 
@@ -79,16 +79,17 @@
 
 
 
-<meta name="description" content="使用GitHub搭建个人博客的过程虽然简单，但是期间还是踩过了一些坑，这里简单的记录一下配置的过程，以方便查找。">
+<meta name="description" content="生产者消费者模式生产者消费者模式：有一个生产者生产产品，这些产品提供给若干个消费者去消费，为了使生产者和消费者能够并发执行，在两者之间设置一个具有多个缓冲区的缓冲池，生产者将它生产的产品放到缓冲区中，消费者可以从缓冲区中取走产品进行消费，显然生产者和消费者之间需要保持同步。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GitHub Pages搭建个人博客">
-<meta property="og:url" content="http://hkeeplearning.github.io/posts/9414/index.html">
+<meta property="og:title" content="生产者消费者模式">
+<meta property="og:url" content="http://hkeeplearning.github.io/posts/3066187032/index.html">
 <meta property="og:site_name" content="hyy&#39;s blog">
-<meta property="og:description" content="使用GitHub搭建个人博客的过程虽然简单，但是期间还是踩过了一些坑，这里简单的记录一下配置的过程，以方便查找。">
-<meta property="article:published_time" content="2020-05-02T04:55:16.000Z">
-<meta property="article:modified_time" content="2020-05-03T02:07:51.303Z">
+<meta property="og:description" content="生产者消费者模式生产者消费者模式：有一个生产者生产产品，这些产品提供给若干个消费者去消费，为了使生产者和消费者能够并发执行，在两者之间设置一个具有多个缓冲区的缓冲池，生产者将它生产的产品放到缓冲区中，消费者可以从缓冲区中取走产品进行消费，显然生产者和消费者之间需要保持同步。">
+<meta property="article:published_time" content="2020-06-18T07:11:48.000Z">
+<meta property="article:modified_time" content="2020-06-30T14:10:39.347Z">
 <meta property="article:author" content="hyy">
-<meta property="article:tag" content="GitHub">
+<meta property="article:tag" content="设计模式">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://hkeeplearning.github.io/posts/9414/"/>
+  <link rel="canonical" href="http://hkeeplearning.github.io/posts/3066187032/"/>
 
 
 
 
 
-  <title>GitHub Pages搭建个人博客 | hyy's blog</title>
+  <title>生产者消费者模式 | hyy's blog</title>
   
 
 
@@ -295,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hkeeplearning.github.io/posts/9414/">
+    <link itemprop="mainEntityOfPage" href="http://hkeeplearning.github.io/posts/3066187032/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="hyy">
@@ -312,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">GitHub Pages搭建个人博客</h1>
+          <h1 class="post-title" itemprop="name headline">生产者消费者模式</h1>
         
 
         <div class="post-meta">
@@ -324,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-02T12:55:16+08:00">
-                2020-05-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-18T15:11:48+08:00">
+                2020-06-18
               </time>
             
 
@@ -347,8 +348,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index">
-                    <span itemprop="name">网站搭建</span>
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
                   </a>
                 </span>
 
@@ -365,8 +366,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/9414/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/9414/" itemprop="commentCount"></span>
+                <a href="/posts/3066187032/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/3066187032/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -374,7 +375,7 @@
 
           
           
-             <span id="/posts/9414/" class="leancloud_visitors" data-flag-title="GitHub Pages搭建个人博客">
+             <span id="/posts/3066187032/" class="leancloud_visitors" data-flag-title="生产者消费者模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -405,84 +406,53 @@
       
 
       
-        <p>使用GitHub搭建个人博客的过程虽然简单，但是期间还是踩过了一些坑，这里简单的记录一下配置的过程，以方便查找。</p>
+        <h1 id="生产者消费者模式"><a href="#生产者消费者模式" class="headerlink" title="生产者消费者模式"></a>生产者消费者模式</h1><p>生产者消费者模式：有一个生产者生产产品，这些产品提供给若干个消费者去消费，为了使生产者和消费者能够并发执行，在两者之间设置一个具有多个缓冲区的缓冲池，生产者将它生产的产品放到缓冲区中，消费者可以从缓冲区中取走产品进行消费，显然生产者和消费者之间需要保持同步。</p>
 <a id="more"></a>
 
-<h2 id="GitHub-Pages初始化"><a href="#GitHub-Pages初始化" class="headerlink" title="GitHub Pages初始化"></a>GitHub Pages初始化</h2><h3 id="创建个人的GitHub账号"><a href="#创建个人的GitHub账号" class="headerlink" title="创建个人的GitHub账号"></a>创建个人的GitHub账号</h3><p>如用户名：<code>zhangsan</code></p>
-<h3 id="在GitHub账号里新建一个和账号用户名同名的管理仓"><a href="#在GitHub账号里新建一个和账号用户名同名的管理仓" class="headerlink" title="在GitHub账号里新建一个和账号用户名同名的管理仓"></a>在GitHub账号里新建一个和账号用户名同名的管理仓</h3><p>如：<code>zhangsan.github.io</code></p>
-<h3 id="设置该仓为GitHub-Page仓"><a href="#设置该仓为GitHub-Page仓" class="headerlink" title="设置该仓为GitHub Page仓"></a>设置该仓为GitHub Page仓</h3><p>步骤如下：</p>
-<ul>
-<li><p>在软件仓的主页面点击<code>Setting</code></p>
-</li>
-<li><p>找到<code>GitHub Pages</code>，点击<code>Choose a theme</code></p>
-</li>
-<li><p>然后随便选择一个主题，并对更改进行<code>commit</code></p>
-</li>
-</ul>
-<h3 id="在浏览器中输入https-zhangsan-github-io便可以访问网页了。"><a href="#在浏览器中输入https-zhangsan-github-io便可以访问网页了。" class="headerlink" title="在浏览器中输入https://zhangsan.github.io便可以访问网页了。"></a>在浏览器中输入<code>https://zhangsan.github.io</code>便可以访问网页了。</h3><p>但是这样建好的网站并不美观，下面我们将会使用Hexo提供的框架对网页仓进行优化</p>
-<h2 id="优化GitHub-Pages并对仓库进行管理"><a href="#优化GitHub-Pages并对仓库进行管理" class="headerlink" title="优化GitHub Pages并对仓库进行管理"></a>优化GitHub Pages并对仓库进行管理</h2><p>参考：<a href="https://www.zhihu.com/question/21193762/answer/79109280" target="_blank" rel="noopener">知乎</a>，<a href="https://hexo.io/zh-cn/docs/themes.html" target="_blank" rel="noopener">hexo</a></p>
-<h3 id="搭建的流程"><a href="#搭建的流程" class="headerlink" title="搭建的流程"></a>搭建的流程</h3><ol>
-<li><p><code>zhangsan.github.io</code>仓创建两个分支：<code>master</code>与<code>hexo</code></p>
-</li>
-<li><p>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）</p>
-</li>
-<li><p>克隆仓库到本地，并且切换到hexo分支</p>
-</li>
-<li><p>参考<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">hexo</a>安装<code>node</code>和<code>git</code>，在hexo分支上执部署hexo</p>
-</li>
-<li><p>修改_config.yml中的deploy参数，即将网页文件上传到<code>master</code>上</p>
-</li>
+<p>多线程之间的同步可以使用<code>mutex</code>，<code>semaphore</code>和<code>critical_section</code>。多进程之间同步可以使用<code>mutex</code>和<code>semaphore</code>。</p>
+<h2 id="多线程（进程）下mutex，semaphore的区别"><a href="#多线程（进程）下mutex，semaphore的区别" class="headerlink" title="多线程（进程）下mutex，semaphore的区别"></a>多线程（进程）下<code>mutex</code>，<code>semaphore</code>的区别</h2><table>
+<thead>
+<tr>
+<th><code>semaphore</code></th>
+<th>为了使一个信号从一个任务传到另一个任务。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>mutex</code></td>
+<td>使受保护的共享资源在每次任务中都是按照取得与释放的顺序进行。</td>
+</tr>
+</tbody></table>
+<p><code>semaphore</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* Task 1 - Producer *&#x2F;</span><br><span class="line">semPost(sem_power_btn); &#x2F;&#x2F; Send the signal</span><br><span class="line"></span><br><span class="line">&#x2F;* Task 2 - Consumer *&#x2F;</span><br><span class="line">semPend(sem_power_btn); &#x2F;&#x2F; Wait for signal</span><br></pre></td></tr></table></figure>
+
+<p>Is the number of free identical toilet keys. Example, say we have four toilets with identical locks and keys. The semaphore count - the count of keys - is set to 4 at beginning (all four toilets are free), then the count value is decremented as people are coming in. If all toilets are full, ie. there are no free keys left, the semaphore count is 0. Now, when eq. one person leaves the toilet, semaphore is increased to 1 (one free key), and given to the next person in the queue.</p>
+<p>信号量是一个自由的官方厕所钥匙，我们有四个厕所，他们的锁和钥匙是一样的。<br>信号量开始设置为4，表示4个厕所是自由滴，如果一个人进去了，数量就-1.<br>如果厕所满了，钥匙数目就为0，信号量数目这时也是0.如果一个人离开厕所，信号量+1，队列中的下一个人可以用啦！</p>
+<p><code>semaphore</code>是允许多个线程进入，访问互斥资源。除了多元信号量之外，还存在一种二元信号量。即只存在是与否，0与1两种状态。</p>
+<p><code>mutex</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* Task 1 *&#x2F;</span><br><span class="line">mutexWait(mutex_mens_room);</span><br><span class="line">&#x2F;&#x2F; Safely use shared resource</span><br><span class="line">mutexRelease(mutex_mens_room);</span><br><span class="line"></span><br><span class="line">&#x2F;* Task 2 *&#x2F;</span><br><span class="line">mutexWait(mutex_mens_room);</span><br><span class="line">&#x2F;&#x2F; Safely use shared resource</span><br><span class="line">mutexRelease(mutex_mens_room);</span><br></pre></td></tr></table></figure>
+
+<p>Is a key to a toilet. One person can have the key - occupy the toilet - at the time.<br>When finished, the person gives (frees) the key to the next person in the queue.</p>
+<p><code>mutex</code>是厕所钥匙，一次只能一人那着这把钥匙去厕所。结束了，这个人把钥匙给队列中的下一个人。</p>
+<p>它和二元信号量不同的是，占有和释放必须是同一个线程。比如互斥量M被线程A占有，那么释放的时候肯定也是A线程释放的。二元信号量则不必如此，一个二元信号量的占有和释放可以是不同线程。mutex是可以用于进程也可以用于线程的同步机制。</p>
+<p><code>critical_section</code>:</p>
+<p>耗费资源少，用于多线程之间的同步问题。</p>
+<h2 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h2><h3 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h3><ol>
+<li>一个生产者一个消费者一个缓冲区</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: &#39;git&#39;</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;zhangsan&#x2F;zhangsan.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">DWORD WINAPI <span class="title">ProducerThread</span><span class="params">(LPVOID)</span></span>;</span><br><span class="line"><span class="function">DWORD WINAPI <span class="title">ConsumerThread</span><span class="params">(LPVOID)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> kProductNum = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> g_buffer = <span class="number">0</span>;</span><br><span class="line">CRITICAL_SECTION g_criticalSection;</span><br><span class="line">HANDLE g_hEventBufEmpty;</span><br><span class="line">HANDLE g_hEventBufFull;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	::InitializeCriticalSection(&amp;g_criticalSection);</span><br><span class="line">	g_hEventBufEmpty = ::CreateEvent(<span class="literal">NULL</span>, FALSE, TRUE, <span class="literal">NULL</span>);</span><br><span class="line">	g_hEventBufFull = ::CreateEvent(<span class="literal">NULL</span>, FALSE, FALSE, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> kThreadNum = <span class="number">2</span>;</span><br><span class="line">	HANDLE threadHandle[kThreadNum];</span><br><span class="line">	threadHandle[<span class="number">0</span>] = CreateThread(<span class="literal">NULL</span>, <span class="number">0</span>, ProducerThread, <span class="literal">NULL</span>, <span class="number">0</span>, <span class="literal">NULL</span>);</span><br><span class="line">	threadHandle[<span class="number">1</span>] = CreateThread(<span class="literal">NULL</span>, <span class="number">0</span>, ConsumerThread, <span class="literal">NULL</span>, <span class="number">0</span>, <span class="literal">NULL</span>);</span><br><span class="line">	::WaitForMultipleObjects(kThreadNum, threadHandle, TRUE, INFINITE);</span><br><span class="line"></span><br><span class="line">	::DeleteCriticalSection(&amp;g_criticalSection);</span><br><span class="line">	::CloseHandle(threadHandle[<span class="number">0</span>]);</span><br><span class="line">	::CloseHandle(threadHandle[<span class="number">1</span>]);</span><br><span class="line">	::CloseHandle(g_hEventBufFull);</span><br><span class="line">	::CloseHandle(g_hEventBufEmpty);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">DWORD WINAPI <span class="title">ProducerThread</span><span class="params">(LPVOID p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= kProductNum; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		::WaitForSingleObject(g_hEventBufEmpty, INFINITE);</span><br><span class="line">		EnterCriticalSection(&amp;g_criticalSection);</span><br><span class="line">		g_buffer = i;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"生产者将数据 "</span> &lt;&lt; g_buffer &lt;&lt; <span class="string">" 放入缓冲区！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		LeaveCriticalSection(&amp;g_criticalSection);</span><br><span class="line">		::SetEvent(g_hEventBufFull);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">DWORD WINAPI <span class="title">ConsumerThread</span><span class="params">(LPVOID p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= kProductNum; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		::WaitForSingleObject(g_hEventBufFull, INFINITE);</span><br><span class="line">		EnterCriticalSection(&amp;g_criticalSection);</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t\t\t消费者将数据 "</span> &lt;&lt; g_buffer &lt;&lt; <span class="string">" 从缓冲区取出！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		LeaveCriticalSection(&amp;g_criticalSection);</span><br><span class="line">		::SetEvent(g_hEventBufEmpty);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<ol start="7">
-<li><p>依次执行<code>git add .</code>，<code>git commit -m &quot;...&quot;</code>，<code>git push origin hexo</code>提交网站相关的文件</p>
-</li>
-<li><p>执行<code>hexo g</code>，<code>hexo d</code>生成网站并部署到GitHub上</p>
-</li>
+<ol start="2">
+<li>一个生产者多个消费者多个缓冲区</li>
 </ol>
-<h3 id="关于日常的改动流程"><a href="#关于日常的改动流程" class="headerlink" title="关于日常的改动流程"></a>关于日常的改动流程</h3><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p>
-<ol>
-<li><p>依次执行<code>git add .</code>，<code>git commit -m &quot;...&quot;</code>，<code>git push origin hexo</code>将改动推送到GitHub（分支应为hexo）</p>
-</li>
-<li><p>执行<code>hexo g</code>，<code>hexo d</code>发布网站到master分支上</p>
-</li>
-</ol>
-<h3 id="本地资料丢失后的流程"><a href="#本地资料丢失后的流程" class="headerlink" title="本地资料丢失后的流程"></a>本地资料丢失后的流程</h3><p>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
-<ol>
-<li><p>使用<code>git clone git@github.com:zhangsan/zhangsan.github.io.git</code>拷贝仓库，并切换到<code>hexo</code>分支</p>
-</li>
-<li><p>在本地克隆下来的文件夹根目录下，依次执行下列指令：<code>npm install hexo</code>，<code>npm install</code>，<code>npm install hexo-deployer-git</code>，（记得，不需要hexo init这条指令）。</p>
-</li>
-</ol>
-<h2 id="next主题设置"><a href="#next主题设置" class="headerlink" title="next主题设置"></a>next主题设置</h2><p>参考：<a href="https://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">next</a></p>
-<ul>
-<li>在<code>Blogs</code>目录下，输入命令：</li>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">DWORD WINAPI <span class="title">ProducerThread</span><span class="params">(LPVOID)</span></span>;</span><br><span class="line"><span class="function">DWORD WINAPI <span class="title">ConsumerThread</span><span class="params">(LPVOID)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> kProductNum = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> kBufferSize = <span class="number">4</span>;</span><br><span class="line"><span class="keyword">int</span> g_buffer[kBufferSize] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">CRITICAL_SECTION g_criticalSection;</span><br><span class="line">HANDLE g_hEventBufEmpty;</span><br><span class="line">HANDLE g_hEventBufFull;</span><br><span class="line"><span class="keyword">int</span> g_i = <span class="number">0</span>, g_j = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	::InitializeCriticalSection(&amp;g_criticalSection);</span><br><span class="line">	g_hEventBufEmpty = ::CreateSemaphore(<span class="literal">NULL</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="literal">NULL</span>);</span><br><span class="line">	g_hEventBufFull = ::CreateSemaphore(<span class="literal">NULL</span>, <span class="number">0</span>, <span class="number">4</span>, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> kThreadNum = <span class="number">3</span>;</span><br><span class="line">	HANDLE threadHandle[kThreadNum];</span><br><span class="line">	threadHandle[<span class="number">0</span>] = CreateThread(<span class="literal">NULL</span>, <span class="number">0</span>, ProducerThread, <span class="literal">NULL</span>, <span class="number">0</span>, <span class="literal">NULL</span>);</span><br><span class="line">	threadHandle[<span class="number">1</span>] = CreateThread(<span class="literal">NULL</span>, <span class="number">0</span>, ConsumerThread, <span class="literal">NULL</span>, <span class="number">0</span>, <span class="literal">NULL</span>);</span><br><span class="line">	threadHandle[<span class="number">2</span>] = CreateThread(<span class="literal">NULL</span>, <span class="number">0</span>, ConsumerThread, <span class="literal">NULL</span>, <span class="number">0</span>, <span class="literal">NULL</span>);</span><br><span class="line">	::WaitForMultipleObjects(kThreadNum, threadHandle, TRUE, INFINITE);</span><br><span class="line"></span><br><span class="line">	::DeleteCriticalSection(&amp;g_criticalSection);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= kThreadNum; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		::CloseHandle(threadHandle[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	::CloseHandle(g_hEventBufFull);</span><br><span class="line">	::CloseHandle(g_hEventBufEmpty);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">DWORD WINAPI <span class="title">ProducerThread</span><span class="params">(LPVOID p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= kProductNum; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		::WaitForSingleObject(g_hEventBufEmpty, INFINITE);</span><br><span class="line">		EnterCriticalSection(&amp;g_criticalSection);</span><br><span class="line">		</span><br><span class="line">		g_buffer[g_i] = i;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"生产者将数据 "</span> &lt;&lt; <span class="string">"("</span> &lt;&lt; g_i &lt;&lt; <span class="string">" "</span> &lt;&lt; g_buffer[g_i] &lt;&lt; <span class="string">") 放入缓冲区！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		g_i = (g_i + <span class="number">1</span>) % kBufferSize;</span><br><span class="line">		</span><br><span class="line">		::LeaveCriticalSection(&amp;g_criticalSection);</span><br><span class="line">		::ReleaseSemaphore(g_hEventBufFull, <span class="number">1</span>, <span class="literal">NULL</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">DWORD WINAPI <span class="title">ConsumerThread</span><span class="params">(LPVOID p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= kProductNum; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		::WaitForSingleObject(g_hEventBufFull, INFINITE);</span><br><span class="line">		EnterCriticalSection(&amp;g_criticalSection);</span><br><span class="line"></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t\t\t消费者 "</span> &lt;&lt; ::GetCurrentThreadId() &lt;&lt; <span class="string">": ("</span> &lt;&lt; g_j &lt;&lt; <span class="string">" "</span> &lt;&lt; g_buffer[g_j] &lt;&lt; <span class="string">") 从缓冲区取出！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">if</span> (g_buffer[g_j] == kProductNum)</span><br><span class="line">		&#123;</span><br><span class="line">			::LeaveCriticalSection(&amp;g_criticalSection);</span><br><span class="line">			::ReleaseSemaphore(g_hEventBufFull, <span class="number">1</span>, <span class="literal">NULL</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		g_j = (g_j + <span class="number">1</span>) % kBufferSize;</span><br><span class="line">		</span><br><span class="line">		LeaveCriticalSection(&amp;g_criticalSection);</span><br><span class="line">		::ReleaseSemaphore(g_hEventBufEmpty, <span class="number">1</span>, <span class="literal">NULL</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\t\t\t\t消费者 "</span> &lt;&lt; ::GetCurrentThreadId() &lt;&lt; <span class="string">" 退出！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="多进程"><a href="#多进程" class="headerlink" title="多进程"></a>多进程</h3><ul>
+<li>一个常驻进程，申请共享缓冲区（共享内存），初始化信号量和互斥量</li>
+<li>生产者进程，读取本地数据，写入共享缓冲区</li>
+<li>消费者进程，读取共享缓冲区数据，写到本地</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next.git themes&#x2F;next</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/hkeeplearning/LearningCpp/tree/master/LongRunProcess" target="_blank" rel="noopener">实现</a></p>
 
-<ul>
-<li>打开根目录下的<code>_config.yml</code>文件，将theme字段改为next即可</li>
-</ul>
-<p><strong>注意：</strong></p>
-<ul>
-<li><p>项目根目录下的<code>_config.yml</code>文件叫作站点配置文件</p>
-</li>
-<li><p>主题文件夹根目录下的<code>themes/next/_config.yml</code>文件叫作主题配置文件</p>
-</li>
-</ul>
-<h3 id="给next主题添加-标签-等页面"><a href="#给next主题添加-标签-等页面" class="headerlink" title="给next主题添加[标签]等页面"></a>给next主题添加[标签]等页面</h3><p>新建页面：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd your-hexo-site</span><br><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
-
-<p>设置页面类型：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: 标签</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>修改菜单：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F;</span><br><span class="line">  archives: &#x2F;archives</span><br><span class="line">  tags: &#x2F;tags</span><br></pre></td></tr></table></figure>
-
-<p><strong>特别注意：*</strong></p>
-<p><code>Menu</code>如果使用了图标，一定要按照下面的格式设置，小心空格</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F;|| home</span><br><span class="line">  #about: &#x2F;about&#x2F;|| user</span><br><span class="line">  tags: &#x2F;tags&#x2F;|| tags</span><br><span class="line">  categories: &#x2F;categories&#x2F;|| th</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -499,7 +469,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag"># 设计模式</a>
+          
+            <a href="/tags/C/" rel="tag"># C++</a>
           
         </div>
       
@@ -512,8 +484,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/3707651035/" rel="next" title="C++编码总结">
-                <i class="fa fa-chevron-left"></i> C++编码总结
+              <a href="/posts/3329651476/" rel="next" title="卷积神经网络">
+                <i class="fa fa-chevron-left"></i> 卷积神经网络
               </a>
             
           </div>
@@ -522,8 +494,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/21798/" rel="prev" title="C++实现多维数组">
-                C++实现多维数组 <i class="fa fa-chevron-right"></i>
+              <a href="/posts/36134268/" rel="prev" title="C++代码设计原则">
+                C++代码设计原则 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -675,7 +647,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub-Pages初始化"><span class="nav-number">1.</span> <span class="nav-text">GitHub Pages初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建个人的GitHub账号"><span class="nav-number">1.1.</span> <span class="nav-text">创建个人的GitHub账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在GitHub账号里新建一个和账号用户名同名的管理仓"><span class="nav-number">1.2.</span> <span class="nav-text">在GitHub账号里新建一个和账号用户名同名的管理仓</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置该仓为GitHub-Page仓"><span class="nav-number">1.3.</span> <span class="nav-text">设置该仓为GitHub Page仓</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在浏览器中输入https-zhangsan-github-io便可以访问网页了。"><span class="nav-number">1.4.</span> <span class="nav-text">在浏览器中输入https:&#x2F;&#x2F;zhangsan.github.io便可以访问网页了。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化GitHub-Pages并对仓库进行管理"><span class="nav-number">2.</span> <span class="nav-text">优化GitHub Pages并对仓库进行管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建的流程"><span class="nav-number">2.1.</span> <span class="nav-text">搭建的流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于日常的改动流程"><span class="nav-number">2.2.</span> <span class="nav-text">关于日常的改动流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地资料丢失后的流程"><span class="nav-number">2.3.</span> <span class="nav-text">本地资料丢失后的流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next主题设置"><span class="nav-number">3.</span> <span class="nav-text">next主题设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#给next主题添加-标签-等页面"><span class="nav-number">3.1.</span> <span class="nav-text">给next主题添加[标签]等页面</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#生产者消费者模式"><span class="nav-number">1.</span> <span class="nav-text">生产者消费者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程（进程）下mutex，semaphore的区别"><span class="nav-number">1.1.</span> <span class="nav-text">多线程（进程）下mutex，semaphore的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模式"><span class="nav-number">1.2.</span> <span class="nav-text">模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多线程"><span class="nav-number">1.2.1.</span> <span class="nav-text">多线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多进程"><span class="nav-number">1.2.2.</span> <span class="nav-text">多进程</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

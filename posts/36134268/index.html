@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="GitHub," />
+  <meta name="keywords" content="CPP," />
 
 
 
@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="使用GitHub搭建个人博客的过程虽然简单，但是期间还是踩过了一些坑，这里简单的记录一下配置的过程，以方便查找。">
+<meta name="description" content="列举了代码编写的一些原则，遵守这些原则可以使大型项目的开发易于维护。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GitHub Pages搭建个人博客">
-<meta property="og:url" content="http://hkeeplearning.github.io/posts/9414/index.html">
+<meta property="og:title" content="C++代码设计原则">
+<meta property="og:url" content="http://hkeeplearning.github.io/posts/36134268/index.html">
 <meta property="og:site_name" content="hyy&#39;s blog">
-<meta property="og:description" content="使用GitHub搭建个人博客的过程虽然简单，但是期间还是踩过了一些坑，这里简单的记录一下配置的过程，以方便查找。">
-<meta property="article:published_time" content="2020-05-02T04:55:16.000Z">
-<meta property="article:modified_time" content="2020-05-03T02:07:51.303Z">
+<meta property="og:description" content="列举了代码编写的一些原则，遵守这些原则可以使大型项目的开发易于维护。">
+<meta property="article:published_time" content="2020-06-30T01:11:48.000Z">
+<meta property="article:modified_time" content="2020-06-30T14:12:45.904Z">
 <meta property="article:author" content="hyy">
-<meta property="article:tag" content="GitHub">
+<meta property="article:tag" content="CPP">
 <meta name="twitter:card" content="summary">
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://hkeeplearning.github.io/posts/9414/"/>
+  <link rel="canonical" href="http://hkeeplearning.github.io/posts/36134268/"/>
 
 
 
 
 
-  <title>GitHub Pages搭建个人博客 | hyy's blog</title>
+  <title>C++代码设计原则 | hyy's blog</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hkeeplearning.github.io/posts/9414/">
+    <link itemprop="mainEntityOfPage" href="http://hkeeplearning.github.io/posts/36134268/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="hyy">
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">GitHub Pages搭建个人博客</h1>
+          <h1 class="post-title" itemprop="name headline">C++代码设计原则</h1>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-02T12:55:16+08:00">
-                2020-05-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-30T09:11:48+08:00">
+                2020-06-30
               </time>
             
 
@@ -347,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index">
-                    <span itemprop="name">网站搭建</span>
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
                   </a>
                 </span>
 
@@ -365,8 +365,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/9414/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/9414/" itemprop="commentCount"></span>
+                <a href="/posts/36134268/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/36134268/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -374,7 +374,7 @@
 
           
           
-             <span id="/posts/9414/" class="leancloud_visitors" data-flag-title="GitHub Pages搭建个人博客">
+             <span id="/posts/36134268/" class="leancloud_visitors" data-flag-title="C++代码设计原则">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -405,84 +405,60 @@
       
 
       
-        <p>使用GitHub搭建个人博客的过程虽然简单，但是期间还是踩过了一些坑，这里简单的记录一下配置的过程，以方便查找。</p>
+        <p>列举了代码编写的一些原则，遵守这些原则可以使大型项目的开发易于维护。</p>
 <a id="more"></a>
 
-<h2 id="GitHub-Pages初始化"><a href="#GitHub-Pages初始化" class="headerlink" title="GitHub Pages初始化"></a>GitHub Pages初始化</h2><h3 id="创建个人的GitHub账号"><a href="#创建个人的GitHub账号" class="headerlink" title="创建个人的GitHub账号"></a>创建个人的GitHub账号</h3><p>如用户名：<code>zhangsan</code></p>
-<h3 id="在GitHub账号里新建一个和账号用户名同名的管理仓"><a href="#在GitHub账号里新建一个和账号用户名同名的管理仓" class="headerlink" title="在GitHub账号里新建一个和账号用户名同名的管理仓"></a>在GitHub账号里新建一个和账号用户名同名的管理仓</h3><p>如：<code>zhangsan.github.io</code></p>
-<h3 id="设置该仓为GitHub-Page仓"><a href="#设置该仓为GitHub-Page仓" class="headerlink" title="设置该仓为GitHub Page仓"></a>设置该仓为GitHub Page仓</h3><p>步骤如下：</p>
-<ul>
-<li><p>在软件仓的主页面点击<code>Setting</code></p>
-</li>
-<li><p>找到<code>GitHub Pages</code>，点击<code>Choose a theme</code></p>
-</li>
-<li><p>然后随便选择一个主题，并对更改进行<code>commit</code></p>
-</li>
-</ul>
-<h3 id="在浏览器中输入https-zhangsan-github-io便可以访问网页了。"><a href="#在浏览器中输入https-zhangsan-github-io便可以访问网页了。" class="headerlink" title="在浏览器中输入https://zhangsan.github.io便可以访问网页了。"></a>在浏览器中输入<code>https://zhangsan.github.io</code>便可以访问网页了。</h3><p>但是这样建好的网站并不美观，下面我们将会使用Hexo提供的框架对网页仓进行优化</p>
-<h2 id="优化GitHub-Pages并对仓库进行管理"><a href="#优化GitHub-Pages并对仓库进行管理" class="headerlink" title="优化GitHub Pages并对仓库进行管理"></a>优化GitHub Pages并对仓库进行管理</h2><p>参考：<a href="https://www.zhihu.com/question/21193762/answer/79109280" target="_blank" rel="noopener">知乎</a>，<a href="https://hexo.io/zh-cn/docs/themes.html" target="_blank" rel="noopener">hexo</a></p>
-<h3 id="搭建的流程"><a href="#搭建的流程" class="headerlink" title="搭建的流程"></a>搭建的流程</h3><ol>
-<li><p><code>zhangsan.github.io</code>仓创建两个分支：<code>master</code>与<code>hexo</code></p>
-</li>
-<li><p>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）</p>
-</li>
-<li><p>克隆仓库到本地，并且切换到hexo分支</p>
-</li>
-<li><p>参考<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">hexo</a>安装<code>node</code>和<code>git</code>，在hexo分支上执部署hexo</p>
-</li>
-<li><p>修改_config.yml中的deploy参数，即将网页文件上传到<code>master</code>上</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: &#39;git&#39;</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;zhangsan&#x2F;zhangsan.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<ol start="7">
-<li><p>依次执行<code>git add .</code>，<code>git commit -m &quot;...&quot;</code>，<code>git push origin hexo</code>提交网站相关的文件</p>
-</li>
-<li><p>执行<code>hexo g</code>，<code>hexo d</code>生成网站并部署到GitHub上</p>
-</li>
-</ol>
-<h3 id="关于日常的改动流程"><a href="#关于日常的改动流程" class="headerlink" title="关于日常的改动流程"></a>关于日常的改动流程</h3><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p>
+<h2 id="全局名字空间"><a href="#全局名字空间" class="headerlink" title="全局名字空间"></a>全局名字空间</h2><h3 id="全局数据"><a href="#全局数据" class="headerlink" title="全局数据"></a>全局数据</h3><p>将全局变量非全局化：</p>
 <ol>
-<li><p>依次执行<code>git add .</code>，<code>git commit -m &quot;...&quot;</code>，<code>git push origin hexo</code>将改动推送到GitHub（分支应为hexo）</p>
-</li>
-<li><p>执行<code>hexo g</code>，<code>hexo d</code>发布网站到master分支上</p>
-</li>
+<li>将所有的全局变量放入一个结构中</li>
+<li>然后将他们私有化并添加静态访问函数</li>
 </ol>
-<h3 id="本地资料丢失后的流程"><a href="#本地资料丢失后的流程" class="headerlink" title="本地资料丢失后的流程"></a>本地资料丢失后的流程</h3><p>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
+<p>如我们有下面的全局变量：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> <span class="built_in">size</span>;</span><br><span class="line"><span class="keyword">double</span> scale;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *system;</span><br></pre></td></tr></table></figure>
+
+<p>可以这样修改：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 头文件中这样声明，记得要在源文件中定义这些静态成员变量</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Global</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> s_size;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">double</span> s_scale;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">char</span> *s_system;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是，直接访问成员变量的方式会使维护大型系统的成本极为昂贵。而且，如果<code>s_size</code>是基于另外两个更原始的值计算得到的 (<code>s_width</code>, <code>s_height</code>)，直接暴露<code>s_size</code>也是不好的。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 单一状态</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Global</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> s_size;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">double</span> s_scale;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">char</span> *s_system;</span><br><span class="line">    </span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    Global();</span><br><span class="line">    </span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// MANIPULAORS</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setSize</span><span class="params">(<span class="keyword">int</span> <span class="built_in">size</span>)</span> </span>&#123;s_size = <span class="built_in">size</span>;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setScale</span><span class="params">(<span class="keyword">double</span> scale)</span> </span>&#123;s_scale = scale;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setSyetem</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *system)</span> </span>&#123;s_system = system;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// ACCESSORS</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getSize</span><span class="params">()</span> </span>&#123;<span class="keyword">return</span> s_size;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">double</span> <span class="title">getScale</span><span class="params">()</span> </span>&#123;<span class="keyword">return</span> s_scale;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">char</span> *<span class="title">getSystem</span><span class="params">()</span> </span>&#123;<span class="keyword">return</span> s_system;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="自由函数"><a href="#自由函数" class="headerlink" title="自由函数"></a>自由函数</h3><blockquote>
+<p>避免在.h文件的文件作用域内使用自由函数（运算符函数除外）；</p>
+<p>在.c文件中避免使用带有外部链接的自由函数（包括运算符函数）</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getMonitorResolution</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSystemScale</span><span class="params">(<span class="keyword">double</span> scaleFactor)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isPasswordCorrect</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *usr, cong <span class="keyword">char</span> *pwd)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fine</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">SysUtil</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getMonitorResolution</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setSystemScale</span><span class="params">(<span class="keyword">double</span> scaleFactor)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">isPasswordCorrect</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *usr, cong <span class="keyword">char</span> *pwd)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="枚举，typedef和常量数据"><a href="#枚举，typedef和常量数据" class="headerlink" title="枚举，typedef和常量数据"></a>枚举，typedef和常量数据</h3><p>枚举类型，typedef和文件作用域常量数据都有内部链接，人们经常在头文件的问阿金作用域内声明常量，枚举或typedef。但，这是错误的！</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// paint.h</span></span><br><span class="line"><span class="keyword">enum</span> Color &#123;RED, GREEN, BLUE, ORANGE, YELLOW&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// juice.h</span></span><br><span class="line"><span class="keyword">enum</span> Fruit &#123;APPLE, ORANGE, GRAPE, CRANBERRY&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当这样包含时就会发生错误， ORANGE 有二义性</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"paint.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"juice.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"picture.h"</span></span></span><br></pre></td></tr></table></figure>
+
+<p>如果在单独的类中定义这两个枚举，我们可以很容易地使用作用域解析消除二义性问题</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Paint</span> &#123;</span></span><br><span class="line">    <span class="keyword">enum</span> Color &#123;RED, GREEN, BLUE, ORANGE, YELLOW&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Juice</span> &#123;</span></span><br><span class="line">    <span class="keyword">enum</span> Fruit &#123;APPLE, ORANGE, GRAPE, CRANBERRY&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>基于类似的原因，typedef和常量数据，也可以放在头文件的类作用域内。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// array.h</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">String</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Array</span> &#123;</span></span><br><span class="line">    <span class="keyword">enum</span> &#123;DEFAULT_SIZE = <span class="number">100</span>&#125;;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">double</span> DEFAULT_VALUE;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">String</span> DEFAULT_NAME;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// array.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"array.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"str.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> Array::DEFAULT_VALUE = <span class="number">0.0</span>;</span><br><span class="line"><span class="keyword">String</span> Array::DEFAULT_NAME = <span class="string">"111"</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="预处理宏"><a href="#预处理宏" class="headerlink" title="预处理宏"></a>预处理宏</h3><p>好的地方：</p>
 <ol>
-<li><p>使用<code>git clone git@github.com:zhangsan/zhangsan.github.io.git</code>拷贝仓库，并切换到<code>hexo</code>分支</p>
-</li>
-<li><p>在本地克隆下来的文件夹根目录下，依次执行下列指令：<code>npm install hexo</code>，<code>npm install</code>，<code>npm install hexo-deployer-git</code>，（记得，不需要hexo init这条指令）。</p>
-</li>
+<li>包含卫哨</li>
+<li>在.c文件中（用于可移植或调试）</li>
 </ol>
-<h2 id="next主题设置"><a href="#next主题设置" class="headerlink" title="next主题设置"></a>next主题设置</h2><p>参考：<a href="https://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">next</a></p>
-<ul>
-<li>在<code>Blogs</code>目录下，输入命令：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next.git themes&#x2F;next</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// theircode.h</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> GOOD 0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// ourcode.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"theircode.h"</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">OurClass::aFunction</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">enum</span> &#123;BAD = <span class="number">-1</span>, GOOD = <span class="number">0</span>&#125; status = GOOD;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> status;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>打开根目录下的<code>_config.yml</code>文件，将theme字段改为next即可</li>
-</ul>
-<p><strong>注意：</strong></p>
-<ul>
-<li><p>项目根目录下的<code>_config.yml</code>文件叫作站点配置文件</p>
-</li>
-<li><p>主题文件夹根目录下的<code>themes/next/_config.yml</code>文件叫作主题配置文件</p>
-</li>
-</ul>
-<h3 id="给next主题添加-标签-等页面"><a href="#给next主题添加-标签-等页面" class="headerlink" title="给next主题添加[标签]等页面"></a>给next主题添加[标签]等页面</h3><p>新建页面：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd your-hexo-site</span><br><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>该段代码会：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">OurClass::aFunction</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">enum</span> &#123;BAD = <span class="number">-1</span>, <span class="number">0</span> = <span class="number">0</span>&#125; status = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> status;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>设置页面类型：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: 标签</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>因此，就是弹出Syntax Error（语法错误）。</p>
+<h3 id="头文件中的名字"><a href="#头文件中的名字" class="headerlink" title="头文件中的名字"></a>头文件中的名字</h3><blockquote>
+<p>在一个.h文件作用域中，只应该声明类，结构体，联合体，和自由运算符函数</p>
+<p>在.h文件作用域中只应该定义类，结构体，联合体的内联成员函数和自由运算符函数</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PI 3.1415926						<span class="comment">// avoid</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MIN(X, Y) ((X) &lt; (Y)) ? (X) : (Y)	<span class="comment">// avoid</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DriverInit</span>;</span>							<span class="comment">// fine</span></span><br><span class="line"><span class="keyword">union</span> Uaw;									<span class="comment">// fine</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> globalVariable;					<span class="comment">// avoid</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> fileScopeVariable;				<span class="comment">// avoid</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> BUFFER_SIZE = <span class="number">256</span>;				<span class="comment">// avoid</span></span><br><span class="line"><span class="keyword">enum</span> Boolean &#123;ZERO, ONE&#125;;					<span class="comment">// avoid</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> BigInt;						<span class="comment">// avoid</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Driver</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">enum</span> Color</span><br><span class="line">	&#123;</span><br><span class="line">		RED,</span><br><span class="line">		GREEN,</span><br><span class="line">	&#125;;										<span class="comment">// fine</span></span><br><span class="line">	<span class="function"><span class="keyword">typedef</span> <span class="title">int</span> <span class="params">(Driver::*PMF)</span><span class="params">()</span></span>;			<span class="comment">// fine</span></span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> s_cont;						<span class="comment">// fine</span></span><br><span class="line">	<span class="keyword">int</span> d_size;								<span class="comment">// fine</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Pnt</span> &#123;</span></span><br><span class="line">		short <span class="keyword">int</span> x, y;</span><br><span class="line">		Pnt(<span class="keyword">int</span> x_, <span class="keyword">int</span> y_) : </span><br><span class="line">			x(x_), y(y_) &#123;&#125;</span><br><span class="line">	&#125;;										<span class="comment">// fine</span></span><br><span class="line">	<span class="keyword">friend</span> DriverInit;						<span class="comment">// fine</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">round</span><span class="params">(<span class="keyword">double</span> d)</span></span>;				<span class="comment">// fine</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setSize</span><span class="params">(<span class="keyword">int</span> <span class="built_in">size</span>)</span></span>;					<span class="comment">// fine</span></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">cmp</span><span class="params">(<span class="keyword">const</span> Driver &amp;)</span> <span class="keyword">const</span></span>;			<span class="comment">// fine</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">DriverInit</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="comment">// ....</span></span><br><span class="line">&#125; driverInit;								<span class="comment">// special case</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">min</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>;						<span class="comment">// avoid</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x &gt; y ? x : y;</span><br><span class="line">&#125;											<span class="comment">// avoid</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">inline</span> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Driver::setSize</span><span class="params">(<span class="keyword">int</span> <span class="built_in">size</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	d_size = <span class="built_in">size</span>;</span><br><span class="line">&#125;											<span class="comment">// fine</span></span><br><span class="line"></span><br><span class="line">ostream &amp;<span class="keyword">operator</span>&lt;&lt;(ostream &amp;o, <span class="keyword">const</span> Driver &amp;d);</span><br><span class="line">											<span class="comment">// fine</span></span><br></pre></td></tr></table></figure>
 
-<p>修改菜单：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F;</span><br><span class="line">  archives: &#x2F;archives</span><br><span class="line">  tags: &#x2F;tags</span><br></pre></td></tr></table></figure>
-
-<p><strong>特别注意：*</strong></p>
-<p><code>Menu</code>如果使用了图标，一定要按照下面的格式设置，小心空格</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F;|| home</span><br><span class="line">  #about: &#x2F;about&#x2F;|| user</span><br><span class="line">  tags: &#x2F;tags&#x2F;|| tags</span><br><span class="line">  categories: &#x2F;categories&#x2F;|| th</span><br></pre></td></tr></table></figure>
+<h3 id="包含卫哨"><a href="#包含卫哨" class="headerlink" title="包含卫哨"></a>包含卫哨</h3>
       
     </div>
     
@@ -499,7 +475,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+            <a href="/tags/CPP/" rel="tag"># CPP</a>
           
         </div>
       
@@ -512,8 +488,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/3707651035/" rel="next" title="C++编码总结">
-                <i class="fa fa-chevron-left"></i> C++编码总结
+              <a href="/posts/3066187032/" rel="next" title="生产者消费者模式">
+                <i class="fa fa-chevron-left"></i> 生产者消费者模式
               </a>
             
           </div>
@@ -521,10 +497,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/21798/" rel="prev" title="C++实现多维数组">
-                C++实现多维数组 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -675,7 +647,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub-Pages初始化"><span class="nav-number">1.</span> <span class="nav-text">GitHub Pages初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建个人的GitHub账号"><span class="nav-number">1.1.</span> <span class="nav-text">创建个人的GitHub账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在GitHub账号里新建一个和账号用户名同名的管理仓"><span class="nav-number">1.2.</span> <span class="nav-text">在GitHub账号里新建一个和账号用户名同名的管理仓</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置该仓为GitHub-Page仓"><span class="nav-number">1.3.</span> <span class="nav-text">设置该仓为GitHub Page仓</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在浏览器中输入https-zhangsan-github-io便可以访问网页了。"><span class="nav-number">1.4.</span> <span class="nav-text">在浏览器中输入https:&#x2F;&#x2F;zhangsan.github.io便可以访问网页了。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化GitHub-Pages并对仓库进行管理"><span class="nav-number">2.</span> <span class="nav-text">优化GitHub Pages并对仓库进行管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建的流程"><span class="nav-number">2.1.</span> <span class="nav-text">搭建的流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于日常的改动流程"><span class="nav-number">2.2.</span> <span class="nav-text">关于日常的改动流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地资料丢失后的流程"><span class="nav-number">2.3.</span> <span class="nav-text">本地资料丢失后的流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next主题设置"><span class="nav-number">3.</span> <span class="nav-text">next主题设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#给next主题添加-标签-等页面"><span class="nav-number">3.1.</span> <span class="nav-text">给next主题添加[标签]等页面</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局名字空间"><span class="nav-number">1.</span> <span class="nav-text">全局名字空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全局数据"><span class="nav-number">1.1.</span> <span class="nav-text">全局数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自由函数"><span class="nav-number">1.2.</span> <span class="nav-text">自由函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#枚举，typedef和常量数据"><span class="nav-number">1.3.</span> <span class="nav-text">枚举，typedef和常量数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预处理宏"><span class="nav-number">1.4.</span> <span class="nav-text">预处理宏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#头文件中的名字"><span class="nav-number">1.5.</span> <span class="nav-text">头文件中的名字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包含卫哨"><span class="nav-number">1.6.</span> <span class="nav-text">包含卫哨</span></a></li></ol></li></ol></div>
             
 
           </div>
